@@ -1,7 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import "tailwindcss";
 
 @theme {
   --font-Poppins: "Poppins", "sans-serif";
+  --font-Raleway: "Raleway", "sans-serif";
+  --font-Roboto: "Roboto", "sans-serif";
+}
+
+:root {
+  --color-red: #dc2626;
+  --color-white: #ffffff;
+  --radius-lg: 0.75rem; /* example */
+  --spacing-100: 1rem; /* example */
+  --shadow-xl: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ...existing code... */
+
+.heading {
+  font-family: Raleway;
+  color: #050d18;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.subHeading {
+  font-family: Raleway;
+  color: #050d18;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.description {
+  font-family: Roboto;
+  color: #272829;
+  font-size: 1rem;
+  font-weight: 400;
 }

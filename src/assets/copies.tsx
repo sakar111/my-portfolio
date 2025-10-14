@@ -68,7 +68,7 @@ export const jobExperience = [
     date: "Jan 2024 - Apr 2024",
     place: "Pokhara, Nepal",
     points: [
-      "Led development of 1000 HID devices (keyboardandmouse) using microcontrollers and ASICs.",
+      "Led development of 1000 HID devices (keyboard and mouse) using microcontrollers and ASICs.",
     ],
   },
   {
