@@ -58,16 +58,13 @@ const About: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm description">
               <ul className="space-y-4">
-                <InfoItem label="Birthday" value="1 May 1995" />
-                <InfoItem label="Website" value="www.example.com" />
-                <InfoItem label="Phone" value="+123 456 7890" />
-                <InfoItem label="City" value="New York, USA" />
-              </ul>
-              <ul className="space-y-4">
-                <InfoItem label="Age" value="30" />
-                <InfoItem label="Degree" value="Master" />
-                <InfoItem label="Email" value="email@example.com" />
-                <InfoItem label="Freelance" value="Available" />
+                <InfoItem label="Birthday" value="&nbsp;04 April 2001" />
+                <InfoItem label="City" value="&nbsp;Kathmandu, Nepal" />
+                <InfoItem
+                  label="Email"
+                  value="&nbsp;sakar.pathak111@gmail.com"
+                />
+                <InfoItem label="Phone" value="&nbsp;+977 9841671676" />
               </ul>
             </div>
             <p className="mt-6 description">

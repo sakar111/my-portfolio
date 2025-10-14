@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   BiHome,
   BiUser,
@@ -10,27 +10,59 @@ import {
   BiMenu,
   BiEnvelope,
 } from "react-icons/bi";
-
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import profileImg from "../assets/my-profile-img.jpg"; // relative to Navbar.tsx
+import profileImg from "../assets/my-profile-img.jpg";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("Home");
 
-  const menuItems = [
-    { name: "Home", icon: <BiHome /> },
-    { name: "About", icon: <BiUser /> },
-    { name: "My Startup", icon: <BiDollar /> }, // Changed: Represents coding/development
-    { name: "Job Experience", icon: <BiBriefcase /> }, // Changed: Represents business/work/portfolio
-    { name: "Teaching Experience", icon: <BiBook /> }, // Changed: Represents education/learning
-    { name: "Projects", icon: <BiBot /> }, // Changed: Represents construction/projects/work in progress
-  ];
+  // Memoize menu items to prevent unnecessary re-renders
+  const menuItems = useMemo(
+    () => [
+      { name: "Home", icon: <BiHome />, link: "#home" },
+      { name: "About", icon: <BiUser />, link: "#about" },
+      { name: "My Startup", icon: <BiDollar />, link: "#startup" },
+      { name: "Job Experience", icon: <BiBriefcase />, link: "#jobExperience" },
+      {
+        name: "Teaching Experience",
+        icon: <BiBook />,
+        link: "#teachingExperience",
+      },
+      { name: "Projects", icon: <BiBot />, link: "#projects" },
+    ],
+    []
+  );
+
+  // Scroll-spy
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 200; // adjust offset
+      menuItems.forEach((item) => {
+        const section = document.querySelector(item.link);
+        if (section) {
+          const sectionTop =
+            section.getBoundingClientRect().top + window.scrollY;
+          const sectionHeight = section.clientHeight;
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          ) {
+            setActive(item.name);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [menuItems]); // now safe because menuItems is memoized
+
   return (
     <>
       {/* Mobile Hamburger */}
       <button
-        className="fixed top-4 right-4 z-50 bg-[#149ddd] p-2 rounded-full xl:hidden"
+        className="fixed top-4 right-4 z-50 bg-[#149ddd] p-2 rounded-full xl:hidden hover:cursor-pointer"
         onClick={() => setOpen(!open)}
       >
         {open ? (
@@ -58,36 +90,43 @@ const Navbar: React.FC = () => {
           Sakar Pathak
         </h1>
 
-        {/* Social icons */}
+        {/* Social Icons */}
         <div className="flex gap-4 mb-6">
           <a
-            href="mailto:your-email@example.com"
+            href="mailto:sakar.pathak111@gmail.com"
             className="hover:text-blue-400"
           >
             <BiEnvelope size={20} />
           </a>
+
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/sakar111"
             target="_blank"
             className="hover:text-gray-400"
           >
             <FaGithub size={20} />
           </a>
           <a
-            href="https://linkedin.com/in/your-linkedin"
+            href="https://linkedin.com/in/sakar-pathak"
             target="_blank"
             className="hover:text-blue-600"
           >
             <FaLinkedinIn size={20} />
           </a>
         </div>
+
         {/* Navigation */}
         <nav className="flex flex-col w-full px-6">
           <ul className="flex flex-col">
             {menuItems.map((item) => (
               <li
                 key={item.name}
-                onClick={() => setActive(item.name)}
+                onClick={() => {
+                  const el = document.querySelector(item.link);
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                  setActive(item.name);
+                  setOpen(false);
+                }}
                 className={`group flex items-center gap-2 py-5 cursor-pointer transition-colors duration-200 ${
                   active === item.name
                     ? "text-white"
@@ -103,7 +142,9 @@ const Navbar: React.FC = () => {
                 >
                   {item.icon}
                 </span>
-                <span className="font-Poppins text-[16px]">{item.name}</span>
+                <span className="font-Poppins text-[16px] ml-2">
+                  {item.name}
+                </span>
               </li>
             ))}
           </ul>

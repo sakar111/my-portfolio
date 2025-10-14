@@ -31,13 +31,13 @@ const RocketAnimation: React.FC = () => {
               transform: translate(-15vw, 0px) rotate(0deg);
             }
             25% {
-              transform: translate(0vw, -200px) rotate(-10deg);
+              transform: translate(0vw, -200px) rotate(10deg);
             }
             50% {
               transform: translate(15vw, 0px) rotate(0deg);
             }
             75% {
-              transform: translate(0vw, -200px) rotate(10deg);
+              transform: translate(0vw, -200px) rotate(-10deg);
             }
             100% {
               transform: translate(-15vw, 0px) rotate(0deg);

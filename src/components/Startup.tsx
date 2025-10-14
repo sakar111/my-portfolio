@@ -1,7 +1,9 @@
 import React, { useRef, useState, useCallback } from "react";
+import { FiExternalLink } from "react-icons/fi";
+
 import TestimonialCard from "./TestimonialCard";
 import VideoCard from "./VideoCard"; // Make sure this exists
-import { youtubeVideos } from "../assets/copies";
+import { makitCardCopies, youtubeVideos } from "../assets/copies";
 
 export const Startup = () => {
   const testimonialRef = useRef<HTMLDivElement | null>(null);
@@ -75,7 +77,7 @@ export const Startup = () => {
   }, []);
 
   return (
-    <section className="pl-[5%] lg:pl-30 py-16 bg-[#f7f7f7]">
+    <section id="startup" className="pl-[5%] lg:pl-30 py-16 bg-[#f7f7f7]">
       <div className="flex flex-col items-start mb-10">
         <h2 className="heading relative pb-2 inline-block mb-10">
           My Startup
@@ -84,7 +86,14 @@ export const Startup = () => {
             style={{ width: "50px" }}
           ></span>
         </h2>
-        <h3 className="heading mb-4 mt-1">Makit Labs</h3>
+        <span
+          className="relative hover:scale-105 hover:cursor-pointer transition duration-300 inline-block"
+          onClick={() => window.open("https://makitlabs.com", "_blank")}
+        >
+          <h3 className="heading mb-4 mt-1">Makit Labs</h3>
+          <FiExternalLink className="absolute top-0 right-0 text-sm text-gray-400" />
+        </span>
+
         <p className="description mb-4">
           Robotics Lab to ease a student’s entry to robotics.
         </p>
@@ -107,22 +116,25 @@ export const Startup = () => {
       >
         <div className="flex justify-items-center">
           <div className="flex gap-[40px]">
-            <TestimonialCard
-              image=""
-              quote="Researched and Developed Makit Robotics Kit"
-            />
-            <TestimonialCard
-              image=""
-              quote="Open Sourced Makit Robot Dog Kit"
-            />
-            <TestimonialCard image="" quote="Taught More than 1000 Students" />
+            {makitCardCopies.map((item, index) => (
+              <TestimonialCard key={index} {...item} />
+            ))}
           </div>
         </div>
       </div>
 
       {/* YouTube Section */}
       <div className="mt-20">
-        <h3 className="heading mb-4">Third World Nerd</h3>
+        <span
+          className="relative hover:scale-105 hover:cursor-pointer transition duration-300 inline-block"
+          onClick={() =>
+            window.open("https://www.youtube.com/@ThirdWorldNerd", "_blank")
+          }
+        >
+          <h3 className="heading mb-4 mt-1">Third World Nerd</h3>
+          <FiExternalLink className="absolute top-0 right-0 text-sm text-gray-400" />
+        </span>
+
         <p className="description mb-4">
           Youtube Channel that provides robotics education packaged as
           entertainment using culturally familiar examples.
