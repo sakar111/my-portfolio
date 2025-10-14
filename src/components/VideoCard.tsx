@@ -25,7 +25,7 @@ const VideoCard = ({ videoId, videoTitle }: VideoCardProps) => {
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
   return (
-    <div className="w-[300px] flex-shrink-0 rounded-2xl overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
+    <div className="w-[300px] flex-shrink-0 rounded-2xl mb-2 overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
       <div className="relative w-full h-[200px] bg-gray-900">
         {/* Video Player */}
         {isPlaying ? (
@@ -73,7 +73,7 @@ const VideoCard = ({ videoId, videoTitle }: VideoCardProps) => {
 
       {/* Video title */}
       <div className="p-3">
-        <h3 className="text-sm font-semibold text-gray-800 leading-tight line-clamp-2 hover:text-blue-600 transition-colors duration-200">
+        <h3 className="text-sm text-gray-600 leading-tight line-clamp-3 hover:text-blue-600 transition-colors duration-200">
           {videoTitle}
         </h3>
       </div>

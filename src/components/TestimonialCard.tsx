@@ -11,7 +11,7 @@ const TestimonialCard: FC<CardProps> = ({ image, quote }) => {
     // 360px * 0.6 = 216px
     // 560px * 0.6 = 336px
     // mx-auto centers this container.
-    <div className="w-[216px] h-[336px] sm:w-[360px] sm:h-[560px] mx-auto">
+    <div className="w-[216px] h-[336px] sm:w-[360px] sm:h-[560px] mb-2  mx-auto">
       {/* Inner Card (Original): Keeps the large base size and applies the transform
           - scale-[0.6] is used for clarity (same as scale-60).
           - origin-top-left is crucial: it makes the card scale down from the top-left corner,

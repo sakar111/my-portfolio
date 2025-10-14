@@ -85,7 +85,7 @@ export const Startup = () => {
           ></span>
         </h2>
         <h3 className="text-2xl font-semibold mb-4 mt-1">Makit Labs</h3>
-        <p className="text-gray-600 mb-4">
+        <p className="text-gray-700 mb-4">
           Robotics Lab to ease a student’s entry to robotics.
         </p>
       </div>
@@ -115,7 +115,7 @@ export const Startup = () => {
       {/* YouTube Section */}
       <div className="mt-20">
         <h3 className="text-2xl font-semibold mb-4">Third World Nerd</h3>
-        <p className="text-gray-600 mb-4">
+        <p className="text-gray-700 mb-4">
           Youtube Channel that provides robotics education packaged as
           entertainment using culturally familiar examples.
         </p>
