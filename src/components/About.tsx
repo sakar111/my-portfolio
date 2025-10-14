@@ -31,7 +31,7 @@ const About: React.FC = () => {
               ></span>
             </h2>
           </div>{" "}
-          <p className="text-left text-gray-600">
+          <p className="text-left text-gray-700">
             Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
             aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
             quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
@@ -51,7 +51,7 @@ const About: React.FC = () => {
             <h3 className="text-2xl font-semibold mb-4">
               UI/UX Designer &amp; Web Developer
             </h3>
-            <p className="italic text-gray-600 mb-4">
+            <p className="italic text-gray-700 mb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
@@ -70,7 +70,7 @@ const About: React.FC = () => {
                 <InfoItem label="Freelance" value="Available" />
               </ul>
             </div>
-            <p className="mt-6 text-gray-600">
+            <p className="mt-6 text-gray-700">
               Officiis eligendi itaque labore et dolorum mollitia officiis optio
               vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor
               incidunt officia tempore. Et eius omnis. Cupiditate ut dicta
