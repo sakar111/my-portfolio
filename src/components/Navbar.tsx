@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import {
   BiHome,
   BiUser,
-  BiFile,
-  BiImage,
+  BiDollar,
   BiBriefcase,
-  BiEnvelope,
-  BiMenu,
+  BiBook,
+  BiBot,
   BiX,
-  BiChevronDown,
+  BiMenu,
+  BiEnvelope,
 } from "react-icons/bi";
+
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import profileImg from "../assets/my-profile-img.jpg"; // relative to Navbar.tsx
 
@@ -20,11 +21,10 @@ const Navbar: React.FC = () => {
   const menuItems = [
     { name: "Home", icon: <BiHome /> },
     { name: "About", icon: <BiUser /> },
-    { name: "Resume", icon: <BiFile /> },
-    { name: "Portfolio", icon: <BiImage /> },
-    { name: "Services", icon: <BiBriefcase /> },
-    { name: "Dropdown", icon: <BiChevronDown /> },
-    { name: "Contact", icon: <BiEnvelope /> },
+    { name: "My Startup", icon: <BiDollar /> }, // Changed: Represents coding/development
+    { name: "Job Experience", icon: <BiBriefcase /> }, // Changed: Represents business/work/portfolio
+    { name: "Teaching Experience", icon: <BiBook /> }, // Changed: Represents education/learning
+    { name: "Projects", icon: <BiBot /> }, // Changed: Represents construction/projects/work in progress
   ];
   return (
     <>
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed z-50 top-0 left-0 h-full w-64 bg-[#040b14] text-white flex flex-col items-center py-6 transform transition-transform duration-300
+        className={`fixed z-50 top-0 left-0 h-full w-[18.75rem] bg-[#040b14] text-white flex flex-col items-center py-4 transform transition-transform duration-300
         ${open ? "translate-x-0" : "-translate-x-full"} xl:translate-x-0`}
       >
         {/* Profile */}
@@ -50,11 +50,11 @@ const Navbar: React.FC = () => {
           <img
             src={profileImg}
             alt="Profile"
-            className="w-28 h-28 rounded-full border-8 border-white/15"
+            className="w-30 h-30 rounded-full border-8 border-white/15"
           />
         </div>
 
-        <h1 className="text-xl mb-4 font-semibold font-Poppins">
+        <h1 className="font-Raleway text-white text-2xl font-bold mb-4">
           Sakar Pathak
         </h1>
 
@@ -88,14 +88,14 @@ const Navbar: React.FC = () => {
               <li
                 key={item.name}
                 onClick={() => setActive(item.name)}
-                className={`group flex items-center gap-2 py-4 cursor-pointer transition-colors duration-200 ${
+                className={`group flex items-center gap-2 py-5 cursor-pointer transition-colors duration-200 ${
                   active === item.name
                     ? "text-white"
                     : "text-[#A8A9B4] hover:text-white"
                 }`}
               >
                 <span
-                  className={`text-xl transition-colors duration-200 ${
+                  className={`text-2xl transition-colors duration-200 ${
                     active === item.name
                       ? "text-blue-400"
                       : "group-hover:text-blue-400 text-[#A8A9B4]"
@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
                 >
                   {item.icon}
                 </span>
-                <span className="font-Poppins text-sm">{item.name}</span>
+                <span className="font-Poppins text-[16px]">{item.name}</span>
               </li>
             ))}
           </ul>

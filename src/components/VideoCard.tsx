@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface VideoCardProps {
   videoId: string;
@@ -25,7 +25,7 @@ const VideoCard = ({ videoId, videoTitle }: VideoCardProps) => {
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
   return (
-    <div className="w-[300px] flex-shrink-0 rounded-2xl mb-2 overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
+    <div className="w-[300px] flex-shrink-0 rounded-2xl mb-2 overflow-hidden shadow-lg bg-[#f7f7f7] hover:shadow-xl transition-shadow duration-300">
       <div className="relative w-full h-[200px] bg-gray-900">
         {/* Video Player */}
         {isPlaying ? (
@@ -62,7 +62,7 @@ const VideoCard = ({ videoId, videoTitle }: VideoCardProps) => {
             />
 
             {/* Play Button Overlay */}
-            <div className="absolute inset-0 flex justify-start items-end m-4 bg-black/30 group-hover:bg-black/40 transition-colors duration-300">
+            <div className="absolute inset-0 flex justify-start items-end p-4 bg-black/30 group-hover:bg-black/40 transition-colors duration-300">
               <div className="rounded-full bg-gray-600 shadow-2xl transition-all duration-300 group-hover:scale-110">
                 <PlayIcon />
               </div>
@@ -73,9 +73,7 @@ const VideoCard = ({ videoId, videoTitle }: VideoCardProps) => {
 
       {/* Video title */}
       <div className="p-3">
-        <h3 className="text-sm text-gray-600 leading-tight line-clamp-3 hover:text-blue-600 transition-colors duration-200">
-          {videoTitle}
-        </h3>
+        <h3 className="description leading-tight line-clamp-4">{videoTitle}</h3>
       </div>
     </div>
   );

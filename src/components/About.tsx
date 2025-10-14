@@ -18,11 +18,11 @@ const About: React.FC = () => {
     </li>
   );
   return (
-    <section id="about" className="py-16 px-30 bg-white text-gray-800">
+    <section id="about" className="py-16 px-6 lg:px-30 bg-white text-gray-800">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="mb-12">
           <div className="flex flex-col items-start mb-10">
-            <h2 className="text-4xl font-semibold text-gray-800 relative pb-2 inline-block">
+            <h2 className="heading relative pb-2 inline-block">
               About
               {/* The actual line is created here using a pseudo-element */}
               <span
@@ -31,7 +31,7 @@ const About: React.FC = () => {
               ></span>
             </h2>
           </div>{" "}
-          <p className="text-left text-gray-700">
+          <p className="text-left description">
             Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
             aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
             quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
@@ -48,15 +48,15 @@ const About: React.FC = () => {
           </div>
 
           <div className="md:w-2/3">
-            <h3 className="text-2xl font-semibold mb-4">
+            <h3 className="subHeading mb-4">
               UI/UX Designer &amp; Web Developer
             </h3>
-            <p className="italic text-gray-700 mb-4">
+            <p className="italic description mb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm description">
               <ul className="space-y-4">
                 <InfoItem label="Birthday" value="1 May 1995" />
                 <InfoItem label="Website" value="www.example.com" />
@@ -70,7 +70,7 @@ const About: React.FC = () => {
                 <InfoItem label="Freelance" value="Available" />
               </ul>
             </div>
-            <p className="mt-6 text-gray-700">
+            <p className="mt-6 description">
               Officiis eligendi itaque labore et dolorum mollitia officiis optio
               vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor
               incidunt officia tempore. Et eius omnis. Cupiditate ut dicta

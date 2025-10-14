@@ -75,17 +75,17 @@ export const Startup = () => {
   }, []);
 
   return (
-    <section className="px-[5%] md:px-30 py-16 bg-[#f7f7f7]">
+    <section className="pl-[5%] lg:pl-30 py-16 bg-[#f7f7f7]">
       <div className="flex flex-col items-start mb-10">
-        <h2 className="text-4xl font-semibold text-gray-800 relative pb-2 inline-block mb-10">
+        <h2 className="heading relative pb-2 inline-block mb-10">
           My Startup
           <span
             className="absolute -bottom-3 left-0 h-[3px] bg-[#149ddd] rounded-full"
             style={{ width: "50px" }}
           ></span>
         </h2>
-        <h3 className="text-2xl font-semibold mb-4 mt-1">Makit Labs</h3>
-        <p className="text-gray-700 mb-4">
+        <h3 className="heading mb-4 mt-1">Makit Labs</h3>
+        <p className="description mb-4">
           Robotics Lab to ease a student’s entry to robotics.
         </p>
       </div>
@@ -105,17 +105,25 @@ export const Startup = () => {
         onTouchEnd={handleTouchEnd}
         onDragStart={(e) => e.preventDefault()}
       >
-        <div className="flex gap-[40px] w-max px-2">
-          <TestimonialCard image="" quote="Makit Robotics Kit 1" />
-          <TestimonialCard image="" quote="Makit Robotics Kit 2" />
-          <TestimonialCard image="" quote="Makit Robotics Kit 3" />
+        <div className="flex justify-items-center">
+          <div className="flex gap-[40px]">
+            <TestimonialCard
+              image=""
+              quote="Researched and Developed Makit Robotics Kit"
+            />
+            <TestimonialCard
+              image=""
+              quote="Open Sourced Makit Robot Dog Kit"
+            />
+            <TestimonialCard image="" quote="Taught More than 1000 Students" />
+          </div>
         </div>
       </div>
 
       {/* YouTube Section */}
       <div className="mt-20">
-        <h3 className="text-2xl font-semibold mb-4">Third World Nerd</h3>
-        <p className="text-gray-700 mb-4">
+        <h3 className="heading mb-4">Third World Nerd</h3>
+        <p className="description mb-4">
           Youtube Channel that provides robotics education packaged as
           entertainment using culturally familiar examples.
         </p>
@@ -135,7 +143,7 @@ export const Startup = () => {
           onTouchEnd={handleTouchEnd}
           onDragStart={(e) => e.preventDefault()}
         >
-          <div className="flex gap-6 w-max px-2">
+          <div className="flex gap-6 w-max">
             {youtubeVideos.map((video, index) => (
               <VideoCard
                 key={index}

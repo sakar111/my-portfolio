@@ -4,19 +4,15 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Startup from "./components/Startup";
 import ExperienceSection from "./components/Experience";
-import {
-  jobExperience,
-  teachingExperience,
-  Projects,
-  awardsScholarships,
-} from "./assets/copies";
+import { jobExperience, teachingExperience, Projects } from "./assets/copies";
+import RocketAnimation from "./components/RocketAnimation";
 
 const App: React.FC = () => {
   return (
-    <div className="flex flex-row">
+    <div>
       <Navbar />
 
-      <main className="w-full xl:w-[calc(100%-16rem)] xl:ml-64">
+      <main className="w-full xl:w-[calc(100%-18.75rem)] xl:ml-[18.75rem]">
         <Hero />
         <About />
         <Startup />
@@ -35,6 +31,7 @@ const App: React.FC = () => {
           data={Projects}
           bgColor="bg-white"
         />
+        <RocketAnimation />
       </main>
     </div>
   );
