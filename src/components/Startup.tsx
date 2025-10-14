@@ -1,6 +1,7 @@
 import React, { useRef, useState, useCallback } from "react";
 import TestimonialCard from "./TestimonialCard";
 import VideoCard from "./VideoCard"; // Make sure this exists
+import { youtubeVideos } from "../assets/copies";
 
 export const Startup = () => {
   const testimonialRef = useRef<HTMLDivElement | null>(null);
@@ -73,27 +74,11 @@ export const Startup = () => {
     setIsDragging(false);
   }, []);
 
-  // Example YouTube video IDs
-  const youtubeVideos = [
-    "0DCpCSC6Efc",
-    "jsEMLAb3UFE",
-    "VIDEO_ID_3",
-    "VIDEO_ID_4",
-    "VIDEO_ID_1",
-    "VIDEO_ID_2",
-    "VIDEO_ID_3",
-    "VIDEO_ID_4",
-    "VIDEO_ID_1",
-    "VIDEO_ID_2",
-    "VIDEO_ID_3",
-    "VIDEO_ID_4",
-  ];
-
   return (
     <section className="px-[5%] md:px-30 py-16 bg-[#f7f7f7]">
       <div className="flex flex-col items-start mb-10">
         <h2 className="text-4xl font-semibold text-gray-800 relative pb-2 inline-block mb-10">
-          My Works
+          My Startup
           <span
             className="absolute -bottom-3 left-0 h-[3px] bg-[#149ddd] rounded-full"
             style={{ width: "50px" }}
@@ -151,8 +136,12 @@ export const Startup = () => {
           onDragStart={(e) => e.preventDefault()}
         >
           <div className="flex gap-6 w-max px-2">
-            {youtubeVideos.map((id) => (
-              <VideoCard key={id} videoId={id} />
+            {youtubeVideos.map((video, index) => (
+              <VideoCard
+                key={index}
+                videoId={video.videoId}
+                videoTitle={video.videoTitle}
+              />
             ))}
           </div>
         </div>
