@@ -2,18 +2,20 @@ import React from "react";
 import Card, { type CardProps } from "./card"; // Make sure CardProps is exported from Card
 
 interface ExperienceSectionProps {
+  id: string;
   title: string;
   data: CardProps[]; // Correct type
   bgColor?: string; // Optional background color
 }
 
 const ExperienceSection: React.FC<ExperienceSectionProps> = ({
+  id,
   title,
   data,
   bgColor = "bg-[#f7f7f7]",
 }) => {
   return (
-    <section className={`${bgColor} py-16 px-[5%] lg:px-30 `}>
+    <section id={id} className={`${bgColor} py-16 px-[5%] lg:px-30 `}>
       <div className="flex flex-col lg:flex-row justify-start gap-10 mx-auto">
         {/* Left Column: Heading */}
         <div className="lg:w-1/3 min-w-[200px] pr-4">

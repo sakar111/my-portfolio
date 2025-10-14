@@ -73,7 +73,7 @@ const VideoCard = ({ videoId, videoTitle }: VideoCardProps) => {
 
       {/* Video title */}
       <div className="p-3">
-        <h3 className="description leading-tight line-clamp-4">{videoTitle}</h3>
+        <h3 className="description leading-tight line-clamp-3">{videoTitle}</h3>
       </div>
     </div>
   );

@@ -40,3 +40,74 @@
   font-size: 1rem;
   font-weight: 400;
 }
+
+/* --- Fonts & Colors already in your code --- */
+
+/* Fade-in from top for heading */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle bounce for highlighted words */
+@keyframes bounceInline {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Animation classes */
+.animate-fadeInDown {
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+.animate-bounceInline {
+  animation: bounceInline 1s ease-in-out infinite;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+/* Optional: add underline highlight animation */
+.highlight {
+  border-bottom: 2px solid #149ddd;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+/* Perspective for 3D */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Keep child elements in 3D space */
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Hide the backface when not facing user */
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Flip 180° on Y-axis */
+.rotate-y-180 {
+  transform: rotateY(-180deg);
+}
+
+/* Hover tilt effect (only applies when not flipped) */
+.hover\:tilt:hover {
+  transform: rotateY(-10deg) rotateX(-5deg) rotateZ(2deg) scale(1.03);
+  transition: transform 0.3s ease;
+}

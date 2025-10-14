@@ -6,6 +6,7 @@ export interface CardProps {
   date: string;
   place: string;
   points: string[];
+  button?: { title: string; link: string }[]; // optional array of buttons
 }
 
 const Card: React.FC<CardProps> = ({
@@ -14,6 +15,7 @@ const Card: React.FC<CardProps> = ({
   date,
   place,
   points,
+  button,
 }) => {
   return (
     <div className="bg-white shadow-md rounded-lg p-5 w-full max-w-2xl border border-gray-100 hover:shadow-lg transition-shadow duration-300">
@@ -24,11 +26,28 @@ const Card: React.FC<CardProps> = ({
         <span className="ml-5">{place}</span>
       </p>
 
-      <ul className="mt-3 list-disc list-outside description leading-relaxed space-y-1 pl-5">
+      <ul className="mt-3 list-disc list-outside description leading-relaxed space-y-1 pl-5 mb-4">
         {points.map((point, index) => (
           <li key={index}>{point}</li>
         ))}
       </ul>
+
+      {/* Buttons */}
+      {button && button.length > 0 && (
+        <div className="flex gap-3 mt-3 flex-wrap">
+          {button.map((btn, idx) => (
+            <a
+              key={idx}
+              href={btn.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-200 hover:bg-gray-300 description px-4 py-2 rounded-full transition-colors duration-200"
+            >
+              {btn.title}
+            </a>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

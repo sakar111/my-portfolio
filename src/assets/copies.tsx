@@ -1,9 +1,8 @@
-// Example YouTube videos with descriptions (reversed order)
 export const youtubeVideos = [
   {
     videoId: "c0BD83TTN2g",
     videoTitle:
-      "Years after a faulty incubator killed 25 chicks, I redeemed myself by engineering a flawless, risk-assessed incubator.",
+      "Years after a faulty incubator killed 25 chicks I redeem myself with a risk-assessed incubator.",
   },
   {
     videoId: "ipwiKTBkyi0",
@@ -27,7 +26,7 @@ export const youtubeVideos = [
   {
     videoId: "jsEMLAb3UFE",
     videoTitle:
-      "We oversimplified the basic concept of electricity (current, voltage, power, and resistance) which seemed to trouble a lot of casuals.",
+      "We oversimplified the basic concept of electricity (current voltage and power) which troubled a lot of casuals.",
   },
   {
     videoId: "qH0R85JNOHU",
@@ -47,7 +46,7 @@ export const youtubeVideos = [
   {
     videoId: "0DCpCSC6Efc",
     videoTitle:
-      "Series of unnecessary inventions to brush our teeth, cook us food, clean our rooms, do the dishes and talk to girls.",
+      "Series of unnecessary inventions to to brush teeth, cook food, clean rooms, do dishes and talk to girls.",
   },
   {
     videoId: "UNcxobltQyU",
@@ -112,6 +111,10 @@ export const Projects = [
       "Designed and tuned feedback controllers (PID, LQR, LQG) for hover control.",
       "Achieved successful trajectory tracking using Model Predictive Control (MPC) in simulation.",
     ],
+    button: [
+      { title: "Youtube", link: "https://youtube.com/username" },
+      { title: "Github", link: "https://github.com/username" },
+    ],
   },
 ];
 
@@ -127,5 +130,26 @@ export const awardsScholarships = [
       "Winner, National Science Exhibition",
       "Nepal Government Financial Aid during High School",
     ],
+  },
+];
+
+export const makitCardCopies = [
+  {
+    image: "",
+    quote: "Researched and Developed Makit Robotics Kit",
+    backText:
+      "We wanted to eliminate the barrier to entry to Robotics Education so we developed a plug and play robotics kit which could be used to build multiple projects. We provided tutorials for 6 projects including a RC Car, Line follower robot, Self balancing robot and a personal AI assistance and made it compatible with a wide range of sensors, empowering users to keep innovating and build endless new projects beyond the included tutorials.",
+  },
+  {
+    image: "",
+    quote: "Open Sourced Makit Robot Dog Kit",
+    backText:
+      "With Robot Dogs being one of the most researched topics in Robotics, we wanted to enable every tech enthusiast to be able to build one. So with months of R&D we created and open sourced the cheapest possible build for the Robot Dog inspired by the Stanford Pupper. All of the design, circuits and code can be found in our github and it will cost you at max NPR 15,000 to build on your own.",
+  },
+  {
+    image: "",
+    quote: "Taught More than 1000 Students",
+    backText:
+      "We hosted 3+ workshops and weekly STEM classes and taught over 1000 students Robotics all across the country over the course of a year.",
   },
 ];

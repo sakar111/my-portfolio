@@ -17,16 +17,19 @@ const App: React.FC = () => {
         <About />
         <Startup />
         <ExperienceSection
+          id="jobExperience"
           title="Job Experience"
           data={jobExperience}
           bgColor="bg-white"
         />
         <ExperienceSection
+          id="teachingExperience"
           title="Teaching Experience"
           data={teachingExperience}
           bgColor="bg-gray-50"
         />
         <ExperienceSection
+          id="projects"
           title="Projects"
           data={Projects}
           bgColor="bg-white"
