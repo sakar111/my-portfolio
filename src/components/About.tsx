@@ -1,5 +1,4 @@
 import React from "react";
-import profileImg from "../assets/my-profile-img.jpg"; // relative to Navbar.tsx
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 const About: React.FC = () => {
@@ -41,7 +40,7 @@ const About: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
           <div className="md:w-1/3">
             <img
-              src={profileImg}
+              src="/photo/my-profile2.jpg"
               alt="Profile"
               className="rounded-lg shadow-lg"
             />

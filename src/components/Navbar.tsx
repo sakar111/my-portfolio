@@ -11,7 +11,6 @@ import {
   BiEnvelope,
 } from "react-icons/bi";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import profileImg from "../assets/my-profile-img.jpg";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -80,7 +79,7 @@ const Navbar: React.FC = () => {
         {/* Profile */}
         <div className="mb-4">
           <img
-            src={profileImg}
+            src="/photo/my-profile2.jpg"
             alt="Profile"
             className="w-30 h-30 rounded-full border-8 border-white/15"
           />

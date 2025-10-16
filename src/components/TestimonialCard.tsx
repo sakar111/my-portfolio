@@ -1,5 +1,4 @@
 import { useState } from "react";
-import heroBg from "../assets/hero-bg.jpg"; // your image path
 
 interface CardProps {
   image?: string; // optional, fallback to heroBg
@@ -7,7 +6,7 @@ interface CardProps {
   backText: string;
 }
 
-const FlipCard = ({ image = heroBg, quote, backText }: CardProps) => {
+const FlipCard = ({ image, quote, backText }: CardProps) => {
   const [flipped, setFlipped] = useState(false);
 
   return (
@@ -41,7 +40,7 @@ const FlipCard = ({ image = heroBg, quote, backText }: CardProps) => {
             {" "}
             {/* Quote text */}{" "}
             {/* Using Tailwind's native line-clamp utility */}{" "}
-            <p className="text-white/85 font-Roboto line-clamp-1 group-hover:text-white transition duration-300">
+            <p className="text-white/85 font-Roboto text-left line-clamp-1 group-hover:text-white transition duration-300">
               {" "}
               {quote}{" "}
             </p>{" "}
