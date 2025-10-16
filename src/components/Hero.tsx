@@ -1,11 +1,20 @@
 import React from "react";
-import heroBg from "../assets/hero-bg.jpg"; // relative to Navbar.tsx
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative">
+    <section id="home" className="relative h-screen overflow-hidden">
+      {/* Video Background */}
+      <video
+        src="/photo/C6683.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover brightness-70 -z-10"
+      ></video>
+
       {/* Left Text Block */}
-      <div className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center px-10">
+      <div className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center px-10 z-10">
         {/* wrapper with fading overlay */}
         <div className="relative rounded-full">
           {/* gradient overlay that fades to transparent at the edges */}
@@ -35,12 +44,6 @@ const Hero: React.FC = () => {
             </p>
           </div>
         </div>
-      </div>
-
-      {/* Right Image / Video */}
-      <div className="h-screen">
-        <img src={heroBg} alt="Hero" className="w-full h-full object-cover" />
-        {/* Later you can replace <img> with <video> */}
       </div>
     </section>
   );

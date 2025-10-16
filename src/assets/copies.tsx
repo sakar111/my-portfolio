@@ -141,7 +141,7 @@ export const makitCardCopies = [
       "We wanted to eliminate the barrier to entry to Robotics Education so we developed a plug and play robotics kit which could be used to build multiple projects. We provided tutorials for 6 projects including a RC Car, Line follower robot, Self balancing robot and a personal AI assistance and made it compatible with a wide range of sensors, empowering users to keep innovating and build endless new projects beyond the included tutorials.",
   },
   {
-    image: "",
+    image: "/photo/robot-dog2.jpg",
     quote: "Open Sourced Makit Robot Dog Kit",
     backText:
       "With Robot Dogs being one of the most researched topics in Robotics, we wanted to enable every tech enthusiast to be able to build one. So with months of R&D we created and open sourced the cheapest possible build for the Robot Dog inspired by the Stanford Pupper. All of the design, circuits and code can be found in our github and it will cost you at max NPR 15,000 to build on your own.",
