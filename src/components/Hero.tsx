@@ -5,7 +5,7 @@ const Hero: React.FC = () => {
     <section id="home" className="relative h-screen overflow-hidden">
       {/* Video Background */}
       <video
-        src="/photo/C6683.mp4"
+        src="/photo/hero-bg.mp4"
         autoPlay
         loop
         muted

@@ -111,10 +111,7 @@ export const Projects = [
       "Designed and tuned feedback controllers (PID, LQR, LQG) for hover control.",
       "Achieved successful trajectory tracking using Model Predictive Control (MPC) in simulation.",
     ],
-    button: [
-      { title: "Youtube", link: "https://youtube.com/username" },
-      { title: "Github", link: "https://github.com/username" },
-    ],
+    button: [{ title: "Github", link: "https://github.com/username" }],
   },
 ];
 
