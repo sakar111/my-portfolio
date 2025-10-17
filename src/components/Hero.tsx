@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 
 const Hero: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalVideoRef = useRef<HTMLVideoElement>(null);
+
+  const handleRestart = () => {
+    if (modalVideoRef.current) {
+      modalVideoRef.current.currentTime = 0;
+      modalVideoRef.current.play();
+    }
+  };
+
   return (
     <section id="home" className="relative lg:h-screen overflow-hidden">
-      {/* Desktop Video Background (above lg) */}
+      {/* Desktop Video Background */}
       <video
         src="/photo/hero-bg.mp4"
         autoPlay
@@ -11,9 +21,9 @@ const Hero: React.FC = () => {
         muted
         playsInline
         className="hidden lg:block absolute top-0 left-0 w-full h-full object-cover brightness-70 -z-10"
-      ></video>
+      />
 
-      {/* Desktop Text Block (above lg) */}
+      {/* Desktop Text Block */}
       <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 flex-col justify-center px-10 z-10">
         <div className="relative rounded-full">
           <div
@@ -43,7 +53,15 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Layout (below lg) */}
+      {/* Open Video Button (visible on all screens) */}
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="absolute text-sm lg:text-base bottom-4 right-4 bg-gray-500 text-white px-2 py-1 rounded hover:bg-gray-600 duration-500 hover:cursor-pointer transition z-20"
+      >
+        Open Video
+      </button>
+
+      {/* Mobile Layout */}
       <div className="lg:hidden flex flex-col items-center px-6 py-8">
         <div className="pt-10 mb-10 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold font-Raleway text-black mb-4">
@@ -71,6 +89,35 @@ const Hero: React.FC = () => {
           className="w-full h-auto object-cover rounded-md"
         />
       </div>
+
+      {/* Modal Overlay */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4">
+          <div className="relative w-full max-w-3xl">
+            <video
+              ref={modalVideoRef}
+              src="/photo/hero-bg.mp4"
+              controls
+              autoPlay
+              className="w-full h-auto rounded"
+            />
+            <div className="flex justify-end gap-2 mt-2">
+              <button
+                onClick={handleRestart}
+                className="bg-gray-500 text-white px-3 py-1 rounded hover:bg-gray-600 hover:cursor-pointer duration-500"
+              >
+                Restart
+              </button>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="bg-gray-500 text-white px-3 py-1 rounded hover:bg-gray-600 hover:cursor-pointer duration-500"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
