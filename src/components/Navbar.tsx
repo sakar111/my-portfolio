@@ -73,8 +73,8 @@ const Navbar: React.FC = () => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed z-50 top-0 left-0 h-[100dvh] w-[18.75rem] bg-[#040b14] text-white flex flex-col items-center py-4 transform transition-transform duration-300
-        ${open ? "translate-x-0" : "-translate-x-full"} xl:translate-x-0`}
+        className={`fixed z-50 top-0 bottom-0 left-0 w-[18.75rem] bg-[#040b14] text-white flex flex-col items-center py-4 transform transition-transform duration-300
+    ${open ? "translate-x-0" : "-translate-x-full"} xl:translate-x-0`}
       >
         {/* Profile */}
         <div className="mb-4">
