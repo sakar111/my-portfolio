@@ -2,13 +2,11 @@ import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 const About: React.FC = () => {
-  // A helper component to keep the list clean
   const InfoItem: React.FC<{ label: string; value: string }> = ({
     label,
     value,
   }) => (
     <li className="flex items-center">
-      {/* Icon: Using a proper React component */}
       <MdKeyboardArrowRight className="text-blue-500 text-xl flex-shrink-0 mr-1" />
       <p>
         <strong className="font-semibold text-gray-800">{label}:</strong>{" "}
@@ -16,6 +14,7 @@ const About: React.FC = () => {
       </p>
     </li>
   );
+
   return (
     <section id="about" className="py-16 px-6 lg:px-30 bg-white text-gray-800">
       <div className="container mx-auto">
@@ -23,17 +22,16 @@ const About: React.FC = () => {
           <div className="flex flex-col items-start mb-10">
             <h2 className="heading relative pb-2 inline-block">
               About
-              {/* The actual line is created here using a pseudo-element */}
               <span
                 className="absolute -bottom-3 left-0 h-[3px] bg-[#149ddd]"
-                style={{ width: "50px" }} // Adjust this width as needed
+                style={{ width: "50px" }}
               ></span>
             </h2>
-          </div>{" "}
+          </div>
           <p className="text-left description">
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-            quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+            I build robots to improve people’s lives. I prefer my robots to have
+            their own intelligence and show movement – pushing the limits of
+            physics with stability and control.
           </p>
         </div>
 
@@ -47,14 +45,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="md:w-2/3">
-            <h3 className="subHeading mb-4">
-              UI/UX Designer &amp; Web Developer
-            </h3>
-            <p className="italic description mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-
+            <h3 className="subHeading mb-4">Robotics Engineer</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm description">
               <ul className="space-y-4">
                 <InfoItem label="Birthday" value="&nbsp;04 April 2001" />
@@ -64,15 +55,33 @@ const About: React.FC = () => {
                   value="&nbsp;sakar.pathak111@gmail.com"
                 />
                 <InfoItem label="Phone" value="&nbsp;+977 9841671676" />
+                {/* Captcha Checkbox */}
+                <li className="mt-4">
+                  <div className="flex items-center justify-between w-full max-w-xs p-2 border rounded-md border-gray-300 bg-gray-50 shadow-sm">
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 border-2 border-gray-400 rounded-sm flex items-center justify-center bg-white">
+                        <svg
+                          className="w-4 h-4 text-blue-500"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={3}
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-gray-800 text-sm">
+                        I'm not a robot
+                      </span>
+                    </div>
+                    <div className="flex flex-col items-end text-xs text-gray-500">
+                      <span>reCAPTCHA</span>
+                      <span className="text-[10px]">Privacy - Terms</span>
+                    </div>
+                  </div>
+                </li>
               </ul>
             </div>
-            <p className="mt-6 description">
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio
-              vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor
-              incidunt officia tempore. Et eius omnis. Cupiditate ut dicta
-              maxime officiis quidem quia. Sed et consectetur qui quia
-              repellendus itaque neque.
-            </p>
           </div>
         </div>
       </div>
