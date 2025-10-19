@@ -100,9 +100,22 @@ export const teachingExperience = [
 
 export const Projects = [
   {
+    title: "Quadruped Robot Dog (Educational STEM Kit)",
+    organization: "Makit Labs",
+    date: "",
+    place: "",
+    points: [
+      "Developed a quadruped robot with 3-DOF legs.",
+      "Led a team through five design iterations to achieve stable walking.",
+      "Developed Python GUI tools for kinematics, calibration, stabilization, and real-time control.",
+      "Optimized design for robustness, manufacturability, cost, and scalable kit production.",
+    ],
+    button: [{ title: "Github", link: "https://github.com/username" }],
+  },
+  {
     title: "UAV Model Rocket with Guidance Navigation and Control",
     organization: "Final Year Thesis",
-    date: "Oct 2021- May 2023",
+    date: "",
     place: "",
     points: [
       "Developed rocket body and flight computer hardware/software from scratch.",
@@ -132,19 +145,19 @@ export const awardsScholarships = [
 
 export const makitCardCopies = [
   {
-    image: "",
-    quote: "Researched and Developed Makit Robotics Kit",
-    backText:
-      "We wanted to eliminate the barrier to entry to Robotics Education so we developed a plug and play robotics kit which could be used to build multiple projects. We provided tutorials for 6 projects including a RC Car, Line follower robot, Self balancing robot and a personal AI assistance and made it compatible with a wide range of sensors, empowering users to keep innovating and build endless new projects beyond the included tutorials.",
-  },
-  {
     image: "/photo/robot-dog2.jpg",
     quote: "Open Sourced Makit Robot Dog Kit",
     backText:
       "With Robot Dogs being one of the most researched topics in Robotics, we wanted to enable every tech enthusiast to be able to build one. So with months of R&D we created and open sourced the cheapest possible build for the Robot Dog inspired by the Stanford Pupper. All of the design, circuits and code can be found in our github and it will cost you at max NPR 15,000 to build on your own.",
   },
   {
-    image: "",
+    image: "/photo/car-kit.jpg",
+    quote: "Researched and Developed Makit Robotics Kit",
+    backText:
+      "We wanted to eliminate the barrier to entry to Robotics Education so we developed a plug and play robotics kit which could be used to build multiple projects. We provided tutorials for 6 projects including a RC Car, Line follower robot, Self balancing robot and a personal AI assistance and made it compatible with a wide range of sensors, empowering users to keep innovating and build endless new projects beyond the included tutorials.",
+  },
+  {
+    image: "/photo/students.jpg",
     quote: "Taught More than 1000 Students",
     backText:
       "We hosted 3+ workshops and weekly STEM classes and taught over 1000 students Robotics all across the country over the course of a year.",

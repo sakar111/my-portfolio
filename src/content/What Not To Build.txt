@@ -1,0 +1,48 @@
+When I started thinking about building a robotics startup, my instinct was to go straight for the hardest problem: a general-purpose humanoid robot that could do every household chore. It sounded amazing. Who wouldn’t want one? Surely it would sell.
+
+But then reality set in.
+
+I’ve spent 8 years in robotics. That sounds like a lot. But does 8 years automatically make me an expert? Not really. Someone with 8 years in Silicon Valley has had access to better peers, better problems, and better resources. They’d be ahead of me. And I’d be ahead of someone who spent 8 years working in isolation in a remote village. Context matters.
+
+The problem is that when you’re isolated from the global frontier, things that look “new” to you may not actually be new. They’re just new in your environment. And if they’re only new locally, they won’t scale globally.
+
+I learned this the hard way. I thought about scaling down my humanoid robot idea into something simpler—like a small robot that could interact with kids. My friends loved it. They believed in me because they’d seen me build things before. But even this version was still a tech-first idea. The only thing I changed was making the tech easier for me to build.
+
+That’s where the trap is.
+
+If my startup relies entirely on technology with no complementary side—distribution, market, or context—it’s doomed. If I try to build something cutting-edge on a global scale, I’ll fail because I don’t have the knowledge, people, or resources to pull it off. If I compromise on the tech without adding any context, I’ll fail because what I’ve built won’t be new. Either way, I lose.
+
+A lot of engineers fall into this trap. They love tech, so they ignore context. They sit down to code, dreaming of building something groundbreaking. But if you do this, you will face either of two kinds of competition. On one side, you’re competing against companies at the frontier of the technology with millions in funding and access to the best talent and resources. You will lose that battle. On the other side, you’re competing against countless engineers like yourself, all fantasizing and coding in isolation. You’ll lose that battle too—because of sheer competition.
+
+The worst part is how late you realize you’re playing a losing game.
+
+There are ways to avoid this: talk to potential customers early, try to sell before you build, and be honest about your own skills and limits.
+
+Never try to convince a consumer. If you share your idea and they don’t understand it at first, you can help clarify it—but don’t try to prove to them why your idea is revolutionary. Even if they eventually agree, that doesn’t mean your idea is truly validated. It’s even worse if the person you’re convincing isn’t your actual target customer. If you manage to persuade them, you might get a false sense of validation, which can be far more dangerous than honest feedback.
+
+Selling before building also needs to be balanced. You can’t sell nothing, but you also can’t spend all your time building everything before testing the market.
+
+Be honest about your own skills and limits. I think this is what you can learn from your failures. It shows you what you can realistically build, what you’re genuinely skilled at, and what you truly love. If you learn from your failures, you’ll discover new paths to success.
+
+Now let’s talk about adding context to complement the technical side of a startup. If you step outside the tech bubble, you’ll see plenty of companies that succeeded not just because of their technology, but because of how they paired it with something else.
+
+Take Programiz as an example. If it had been purely a tech-heavy startup, it might have tried to rely on being “cool” enough to go viral. But that alone wouldn’t have worked. Instead, Programiz combined the technical part—making compilers, playground—with the complementary part: writing tutorials which enabled them to actually reach people and teaching them. That context is what made it work, and it also filtered out most of the competition.
+
+Even Airbnb started with a basic website. The real context was hospitality and trust: convincing people to let strangers into their homes.
+
+That said, you have to choose technology at the right stage for the application layer to make sense. Sometimes it’s too early—when the underlying technology isn’t ready. Other times it’s too late—when the technology is already widespread and competition is overwhelming.
+
+For example, trying to build on the application layer of a general-purpose humanoid robot won’t work right now, because the core technology itself is still being developed. The same was true for AI in its early days—there weren’t mature models to build applications on. But now, with LLMs and other AI systems available, countless startups are building and selling applications on top of them.
+
+Even if you find the right context, you still have to keep innovating. Otherwise, once people see your success, they’ll copy it. But if you keep moving fast enough, by the time competitors show up, you’ll already be far ahead—and they’ll burn out trying to catch up.
+
+It’s like content creation. At first, very few people were willing to put themselves out there. Some did and became successful. But once others saw the lifestyle of top creators, many rushed in. Most failed, because the early creators had already set the bar so high. The only ones who broke through were those who brought originality or added their own unique context.
+
+The same thing happens with startups. Once a contextual startup becomes successful, other programmers can more easily see the opportunity. But by then, the original company has already set the standard, and catching up without fresh context or innovation becomes nearly impossible.
+
+But can anyone build on the application layer? The fusion of technology and context must create real value. If someone who is highly skilled in mechanical engineering tries to build an AI application-layer startup with no connection to their mechanical expertise—or any other context they can provide—that’s a sign the startup idea is weak.
+
+As Paul Graham said:
+When searching for ideas, look in areas where you have some expertise. If you're a database expert, don't build a chat app for teenagers (unless you're also a teenager). Maybe it's a good idea, but you can't trust your judgment about that, so ignore it. There have to be other ideas that involve databases, and whose quality you can judge. Do you find it hard to come up with good ideas involving databases? That's because your expertise raises your standards. Your ideas about chat apps are just as bad, but you're giving yourself a Dunning-Kruger pass in that domain.
+
+The teenager part is the context.

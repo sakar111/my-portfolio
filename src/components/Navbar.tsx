@@ -4,13 +4,13 @@ import {
   BiUser,
   BiDollar,
   BiBriefcase,
-  BiBook,
   BiBot,
   BiX,
   BiMenu,
   BiEnvelope,
+  BiBookContent,
 } from "react-icons/bi";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaChalkboardTeacher } from "react-icons/fa";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -25,10 +25,11 @@ const Navbar: React.FC = () => {
       { name: "Job Experience", icon: <BiBriefcase />, link: "#jobExperience" },
       {
         name: "Teaching Experience",
-        icon: <BiBook />,
+        icon: <FaChalkboardTeacher />,
         link: "#teachingExperience",
       },
       { name: "Projects", icon: <BiBot />, link: "#projects" },
+      { name: "Essays", icon: <BiBookContent />, link: "/essays" },
     ],
     []
   );
@@ -37,7 +38,12 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200; // adjust offset
-      menuItems.forEach((item) => {
+      // Filter out the 'Essays' item, as it doesn't correspond to an on-page section
+      const scrollableItems = menuItems.filter((item) =>
+        item.link.startsWith("#")
+      );
+
+      scrollableItems.forEach((item) => {
         const section = document.querySelector(item.link);
         if (section) {
           const sectionTop =
@@ -56,6 +62,24 @@ const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [menuItems]); // now safe because menuItems is memoized
+
+  const handleNavigation = (item) => {
+    // 1. Check if it's a relative path (like '/essays')
+    if (!item.link.startsWith("#")) {
+      // Perform standard page navigation
+      window.location.href = item.link;
+    } else {
+      // 2. It's a section anchor (like '#home')
+      const el = document.querySelector(item.link);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    // Update active state and close mobile menu for all clicks
+    setActive(item.name);
+    setOpen(false);
+  };
 
   return (
     <>
@@ -102,6 +126,7 @@ ${open ? "translate-x-0" : "-translate-x-full"} xl:translate-x-0`}
             href="https://github.com/sakar111"
             target="_blank"
             className="hover:text-gray-400"
+            rel="noopener noreferrer" // Good practice for target="_blank"
           >
             <FaGithub size={20} />
           </a>
@@ -109,6 +134,7 @@ ${open ? "translate-x-0" : "-translate-x-full"} xl:translate-x-0`}
             href="https://linkedin.com/in/sakar-pathak"
             target="_blank"
             className="hover:text-blue-600"
+            rel="noopener noreferrer" // Good practice for target="_blank"
           >
             <FaLinkedinIn size={20} />
           </a>
@@ -120,12 +146,8 @@ ${open ? "translate-x-0" : "-translate-x-full"} xl:translate-x-0`}
             {menuItems.map((item) => (
               <li
                 key={item.name}
-                onClick={() => {
-                  const el = document.querySelector(item.link);
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                  setActive(item.name);
-                  setOpen(false);
-                }}
+                // *** FIX APPLIED HERE: Call the new handler ***
+                onClick={() => handleNavigation(item)}
                 className={`group flex items-center gap-2 py-5 cursor-pointer transition-colors duration-200 ${
                   active === item.name
                     ? "text-white"

@@ -56,9 +56,21 @@ const Hero: React.FC = () => {
       {/* Open Video Button (visible on all screens) */}
       <button
         onClick={() => setIsModalOpen(true)}
-        className="absolute text-sm lg:text-base bottom-4 right-4 bg-gray-500 text-white px-2 py-1 rounded hover:bg-gray-600 duration-500 hover:cursor-pointer transition z-20"
+        className="spx-button z-49 absolute bottom-9 right-7 flex items-center gap-2 px-2 md:px-5 py-2 text-sm md:text-base text-white bg-black/24 border border-white/30 hover:bg-white/24 hover:cursor-pointer transition-all duration-500 rounded-md"
       >
-        Open Video
+        <span className="text">WATCH</span>
+        <svg
+          className="arrow w-4 h-4 transition-transform duration-500"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 13 12"
+          fill="none"
+        >
+          <path
+            d="M11.9893 5.58371L12.2471 5.89914L11.9893 6.21555L8.10059 10.9782L7.3252 10.3454L10.5479 6.39914L1.39941 6.39914L1.39941 5.39914L10.5479 5.39914L7.3252 1.45383L8.10059 0.821014L11.9893 5.58371Z"
+            fill="#F0F0FA"
+            fillOpacity="0.8"
+          />
+        </svg>
       </button>
 
       {/* Mobile Layout */}
@@ -104,15 +116,39 @@ const Hero: React.FC = () => {
             <div className="flex justify-end gap-2 mt-2">
               <button
                 onClick={handleRestart}
-                className="bg-gray-500 text-white px-3 py-1 rounded hover:bg-gray-600 hover:cursor-pointer duration-500"
+                className="spx-button relative z-50 flex items-center gap-2 px-2 md:px-5 py-2 mt-3 text-sm md:text-base text-white bg-black/24  border-white/30 hover:bg-white/24 hover:cursor-pointer transition-all duration-500 rounded-md"
               >
-                Restart
+                <span className="text">RESTART</span>
+                <svg
+                  className="arrow w-4 h-4 transition-transform duration-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 13 12"
+                  fill="none"
+                >
+                  <path
+                    d="M11.9893 5.58371L12.2471 5.89914L11.9893 6.21555L8.10059 10.9782L7.3252 10.3454L10.5479 6.39914L1.39941 6.39914L1.39941 5.39914L10.5479 5.39914L7.3252 1.45383L8.10059 0.821014L11.9893 5.58371Z"
+                    fill="#F0F0FA"
+                    fillOpacity="0.8"
+                  />
+                </svg>
               </button>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="bg-gray-500 text-white px-3 py-1 rounded hover:bg-gray-600 hover:cursor-pointer duration-500"
+                className="spx-button relative z-50 flex items-center gap-2 px-2 md:px-5 py-2 mt-3 text-sm md:text-base text-white bg-black/24 border-white/30 hover:bg-white/24 hover:cursor-pointer transition-all duration-500 rounded-md"
               >
-                Close
+                <span className="text">CLOSE</span>
+                <svg
+                  className="arrow w-4 h-4 transition-transform duration-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 13 12"
+                  fill="none"
+                >
+                  <path
+                    d="M11.9893 5.58371L12.2471 5.89914L11.9893 6.21555L8.10059 10.9782L7.3252 10.3454L10.5479 6.39914L1.39941 6.39914L1.39941 5.39914L10.5479 5.39914L7.3252 1.45383L8.10059 0.821014L11.9893 5.58371Z"
+                    fill="#F0F0FA"
+                    fillOpacity="0.8"
+                  />
+                </svg>
               </button>
             </div>
           </div>
