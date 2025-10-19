@@ -111,3 +111,12 @@
   transform: rotateY(-10deg) rotateX(-5deg) rotateZ(2deg) scale(1.03);
   transition: transform 0.3s ease;
 }
+
+/* Add this to your global.css or a <style> tag */
+.spx-button .arrow {
+  transform: translateX(0);
+}
+
+.spx-button:hover .arrow {
+  transform: translateX(5px);
+}

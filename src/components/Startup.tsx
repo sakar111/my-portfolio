@@ -78,7 +78,7 @@ export const Startup = () => {
 
   return (
     <section id="startup" className="pl-[5%] lg:pl-30 py-16 bg-[#f7f7f7]">
-      <div className="flex flex-col items-start mb-10">
+      <div className="flex flex-col items-start">
         <h2 className="heading relative pb-2 inline-block mb-10">
           My Startup
           <span
@@ -94,7 +94,7 @@ export const Startup = () => {
           <FiExternalLink className="absolute top-0 right-0 text-sm text-gray-400" />
         </span>
 
-        <p className="description mb-4">
+        <p className="description">
           Robotics Lab to ease a student’s entry to robotics.
         </p>
       </div>
@@ -102,7 +102,7 @@ export const Startup = () => {
       {/* Scrollable Testimonial Cards */}
       <div
         ref={testimonialRef}
-        className={`mt-[10px] w-full overflow-x-auto overflow-y-hidden cursor-grab transition-scroll duration-300 ${
+        className={`w-full overflow-x-auto overflow-y-hidden cursor-grab transition-scroll duration-300 ${
           isDragging ? "cursor-grabbing" : ""
         }`}
         onMouseDown={(e) => handleMouseDown(e, testimonialRef)}
@@ -122,9 +122,14 @@ export const Startup = () => {
           </div>
         </div>
       </div>
+      <div className="sm:hidden flex justify-center items-center gap-2 mt-1">
+        <span className="w-2 h-2 rounded-full bg-gray-600" />
+        <span className="w-2 h-2 rounded-full bg-gray-400" />
+        <span className="w-2 h-2 rounded-full bg-gray-400" />
+      </div>
 
       {/* YouTube Section */}
-      <div className="mt-20">
+      <div className="mt-10">
         <span
           className="relative hover:scale-105 hover:cursor-pointer transition duration-300 inline-block"
           onClick={() =>
@@ -164,6 +169,11 @@ export const Startup = () => {
               />
             ))}
           </div>
+        </div>
+        <div className="sm:hidden flex justify-center items-center gap-2 mt-4">
+          <span className="w-2 h-2 rounded-full bg-gray-600" />
+          <span className="w-2 h-2 rounded-full bg-gray-400" />
+          <span className="w-2 h-2 rounded-full bg-gray-400" />
         </div>
       </div>
     </section>
