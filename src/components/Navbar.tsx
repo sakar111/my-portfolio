@@ -15,9 +15,14 @@ import { FaGithub, FaLinkedinIn, FaChalkboardTeacher } from "react-icons/fa";
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("Home");
+  type MenuItem = {
+    name: string;
+    icon: React.ReactNode;
+    link: string;
+  };
 
   // Memoize menu items to prevent unnecessary re-renders
-  const menuItems = useMemo(
+  const menuItems: MenuItem[] = useMemo(
     () => [
       { name: "Home", icon: <BiHome />, link: "#home" },
       { name: "About", icon: <BiUser />, link: "#about" },
@@ -63,7 +68,7 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [menuItems]); // now safe because menuItems is memoized
 
-  const handleNavigation = (item) => {
+  const handleNavigation = (item: MenuItem) => {
     // 1. Check if it's a relative path (like '/essays')
     if (!item.link.startsWith("#")) {
       // Perform standard page navigation
