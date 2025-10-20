@@ -11,6 +11,7 @@ import {
   BiBookContent,
 } from "react-icons/bi";
 import { FaGithub, FaLinkedinIn, FaChalkboardTeacher } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -67,18 +68,15 @@ const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [menuItems]); // now safe because menuItems is memoized
-
+  const navigate = useNavigate();
   const handleNavigation = (item: MenuItem) => {
-    // 1. Check if it's a relative path (like '/essays')
-    if (!item.link.startsWith("#")) {
-      // Perform standard page navigation
-      window.location.href = item.link;
-    } else {
-      // 2. It's a section anchor (like '#home')
+    if (item.link.startsWith("#")) {
+      // Smooth scroll for on-page sections
       const el = document.querySelector(item.link);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Client-side navigation using React Router
+      navigate(item.link);
     }
 
     // Update active state and close mobile menu for all clicks
