@@ -7,7 +7,7 @@ const RocketAnimation: React.FC = () => {
       <div className="absolute bottom-0 w-full h-10 bg-gray-300 rounded-t-md"></div>
 
       {/* Rocket */}
-      <div className="rocket absolute bottom-[20px] left-1/2 -translate-x-1/2 w-12 h-28 z-50">
+      <div className="rocket absolute bottom-[16px] left-1/2 -translate-x-1/2 w-12 h-28 z-50">
         {/* Rocket Nose */}
         <div className="w-0 h-0 border-l-6 border-r-6 border-b-12 border-b-red-500 border-l-transparent border-r-transparent mx-auto"></div>
 

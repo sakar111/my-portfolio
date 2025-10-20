@@ -110,7 +110,12 @@ export const Projects = [
       "Developed Python GUI tools for kinematics, calibration, stabilization, and real-time control.",
       "Optimized design for robustness, manufacturability, cost, and scalable kit production.",
     ],
-    button: [{ title: "Github", link: "https://github.com/username" }],
+    button: [
+      {
+        title: "Github",
+        link: "https://github.com/Third-World-Nerd/Robot-Dog",
+      },
+    ],
   },
   {
     title: "UAV Model Rocket with Guidance Navigation and Control",
@@ -124,7 +129,12 @@ export const Projects = [
       "Designed and tuned feedback controllers (PID, LQR, LQG) for hover control.",
       "Achieved successful trajectory tracking using Model Predictive Control (MPC) in simulation.",
     ],
-    button: [{ title: "Github", link: "https://github.com/username" }],
+    button: [
+      {
+        title: "Github",
+        link: "https://github.com/sakar111/UAV-Model-Rocket-with-Guidance-Navigation-and-Control",
+      },
+    ],
   },
 ];
 
