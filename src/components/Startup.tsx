@@ -95,7 +95,8 @@ export const Startup = () => {
         </span>
 
         <p className="description">
-          Robotics Lab to ease a student’s entry to robotics.
+          Our Robotics based education startup which aims to ease a student's
+          entry to robotics.
         </p>
       </div>
 
