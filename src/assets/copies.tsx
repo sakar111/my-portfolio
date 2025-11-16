@@ -83,9 +83,9 @@ export const jobExperience = [
 
 export const teachingExperience = [
   {
-    title: "Lecturer, Discrete Mathematics",
+    title: "Lecturer, Discrete Mathematics & Digital Logic",
     organization: "Kantipur College of Management and Information Technology",
-    date: "Jul 2024- Sep 2025",
+    date: "May 2024- Sep 2025",
     place: "Kathmandu, Nepal",
     points: [],
   },
@@ -100,7 +100,7 @@ export const teachingExperience = [
 
 export const Projects = [
   {
-    title: "Quadruped Robot Dog (Educational STEM Kit)",
+    title: "Quadruped Robot Dog (Open Source STEM Kit)",
     organization: "Makit Labs",
     date: "",
     place: "",
@@ -115,10 +115,14 @@ export const Projects = [
         title: "Github",
         link: "https://github.com/Third-World-Nerd/Robot-Dog",
       },
+      {
+        title: "Video",
+        link: "https://private-user-images.githubusercontent.com/47787401/503069848-f82f04b2-c392-450a-b499-d7d90e3e596e.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjMyOTkzNzksIm5iZiI6MTc2MzI5OTA3OSwicGF0aCI6Ii80Nzc4NzQwMS81MDMwNjk4NDgtZjgyZjA0YjItYzM5Mi00NTBhLWI0OTktZDdkOTBlM2U1OTZlLm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTExMTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMTE2VDEzMTc1OVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPThkYzI1YTc0YjEzMzNlMzYwN2FmMTNkYzZmYzBmZGQyZWYyNTJmNmE5ODFlNDk2OTI0YmQzYjM0MGZkY2M1ZWQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.VEzMPC1a-XJGJqwXfgBt81JsAj_2E1qpAC-JLH6l7oU",
+      },
     ],
   },
   {
-    title: "UAV Model Rocket with Guidance Navigation and Control",
+    title: " Reusable, Autonomous VTOL Vehicle (Thesis)",
     organization: "Final Year Thesis",
     date: "",
     place: "",
@@ -133,6 +137,10 @@ export const Projects = [
       {
         title: "Github",
         link: "https://github.com/sakar111/UAV-Model-Rocket-with-Guidance-Navigation-and-Control",
+      },
+      {
+        title: "Video",
+        link: "https://private-user-images.githubusercontent.com/47787401/503069147-915736a8-9bbe-4e83-aeb2-1a3086ffe436.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjMyOTkzNzcsIm5iZiI6MTc2MzI5OTA3NywicGF0aCI6Ii80Nzc4NzQwMS81MDMwNjkxNDctOTE1NzM2YTgtOWJiZS00ZTgzLWFlYjItMWEzMDg2ZmZlNDM2Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTExMTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMTE2VDEzMTc1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBhZmNmNTEwOTU3YTI1MDc2ODAwMDM5ZjNmN2Q4MGY4MTBlNjQyNzUwZTkyZTg0OGY2Y2Q1NmM0MTE1NDEwMDkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.HKI5WbfSFz20oiY4nSHw2328QY5gUXmChni3KaQ-tcw",
       },
     ],
   },

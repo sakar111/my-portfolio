@@ -120,3 +120,27 @@
 .spx-button:hover .arrow {
   transform: translateX(5px);
 }
+
+/* Scrollbar styling for sidebar */
+aside {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #4b5563 #000000; /* thumb | track */
+}
+
+/* Chrome, Edge, Safari */
+aside::-webkit-scrollbar {
+  width: 8px;
+}
+
+aside::-webkit-scrollbar-track {
+  background: #000000; /* black track */
+}
+
+aside::-webkit-scrollbar-thumb {
+  background: #4b5563; /* gray thumb (#4b5563 = gray-700) */
+  border-radius: 10px;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; /* slightly lighter on hover */
+}

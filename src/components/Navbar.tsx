@@ -36,6 +36,7 @@ const Navbar: React.FC = () => {
       },
       { name: "Projects", icon: <BiBot />, link: "#projects" },
       { name: "Essays", icon: <BiBookContent />, link: "/essays" },
+      { name: "CV", icon: <BiBookContent />, link: "/SakarPathak_CV.pdf" },
     ],
     []
   );
@@ -75,8 +76,13 @@ const Navbar: React.FC = () => {
       const el = document.querySelector(item.link);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     } else {
-      // Client-side navigation using React Router
-      navigate(item.link);
+      // Open PDF in new tab if it's a PDF
+      if (item.link.endsWith(".pdf")) {
+        window.open(item.link, "_blank");
+      } else {
+        // Client-side navigation using React Router
+        navigate(item.link);
+      }
     }
 
     // Update active state and close mobile menu for all clicks
@@ -100,8 +106,11 @@ const Navbar: React.FC = () => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed z-50 inset-y-0 left-0 w-[18.75rem] bg-[#040b14] text-white flex flex-col items-center py-4 transform transition-transform duration-300
-${open ? "translate-x-0" : "-translate-x-full"} xl:translate-x-0`}
+        className={`fixed z-50 inset-y-0 left-0 w-[18.75rem] bg-[#040b14] text-white 
+  flex flex-col items-center py-4 
+  overflow-y-auto
+  transform transition-transform duration-300
+  ${open ? "translate-x-0" : "-translate-x-full"} xl:translate-x-0`}
       >
         {/* Profile */}
         <div className="mb-4">
