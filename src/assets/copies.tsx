@@ -142,6 +142,10 @@ export const Projects = [
         title: "Video",
         link: "https://youtu.be/sy4MgeHsBhg",
       },
+      {
+        title: "Thesis Report",
+        link: "https://elibrary.tucl.edu.np/JQ99OgQIizUxyjI9nB0on9OyLkqsGIf4/api/core/bitstreams/50768bc5-b571-4bc2-9ae1-6c3d998d0251/content",
+      },
     ],
   },
 ];
