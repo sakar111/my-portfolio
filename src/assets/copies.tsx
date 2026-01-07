@@ -62,6 +62,17 @@ export const youtubeVideos = [
 
 export const jobExperience = [
   {
+    title: "Co-Founder & Lead Engineer",
+    organization: "Axar Space Pvt. Ltd.",
+    date: "Feb 2024 - Present",
+    place: "Kathmandu, Nepal",
+    points: [
+      "Developed complete mechanical, electrical, and firmware stack for programmable robotics platform, enabling students to build multiple projects from a single kit.",
+      "Led development of embedded hardware and software across multiple projects.",
+      "Produced technical video content demonstrating robotics concepts through hands-on projects.",
+    ],
+  },
+  {
     title: "Electronics Engineer",
     organization: "Sandbox Software Pvt. Ltd.",
     date: "Jan 2024 - Apr 2024",
@@ -89,49 +100,21 @@ export const teachingExperience = [
     place: "Kathmandu, Nepal",
     points: [],
   },
-  {
-    title: "Instructor, SAT Mathematics",
-    organization: "Univeral Institute",
-    date: "Jul 2024- Sep 2024",
-    place: "Kathmandu, Nepal",
-    points: [],
-  },
 ];
 
 export const Projects = [
-  {
-    title: "Quadruped Robot Dog (Open Source STEM Kit)",
-    organization: "Makit Labs",
-    date: "",
-    place: "",
-    points: [
-      "Developed a quadruped robot with 3-DOF legs.",
-      "Led a team through five design iterations to achieve stable walking.",
-      "Developed Python GUI tools for kinematics, calibration, stabilization, and real-time control.",
-      "Optimized design for robustness, manufacturability, cost, and scalable kit production.",
-    ],
-    button: [
-      {
-        title: "Github",
-        link: "https://github.com/Third-World-Nerd/Robot-Dog",
-      },
-      {
-        title: "Video",
-        link: "https://youtu.be/LkegFqLjT9M",
-      },
-    ],
-  },
   {
     title: " Reusable, Autonomous VTOL Vehicle (Thesis)",
     organization: "Final Year Thesis",
     date: "",
     place: "",
     points: [
-      "Developed rocket body and flight computer hardware/software from scratch.",
-      "Implemented an Extended Kalman Filter for pose estimation.",
-      "Performed system identification for model-based control design.",
-      "Designed and tuned feedback controllers (PID, LQR, LQG) for hover control.",
-      "Achieved successful trajectory tracking using Model Predictive Control (MPC) in simulation.",
+      "Designed custom flight computer integrating IMU, barometer, GPS, and LiDAR for autonomous vertical flight.",
+      "Implemented asynchronous EKF for sensor fusion, reducing GPS horizontal noise by 96% and achieving sub-meter position accuracy.",
+      "Developed 250Hz attitude estimation on embedded hardware and performed system identification using MOESP to derive state-space models.",
+      "Designed and implemented LQG controller with integral action for attitude stabilization; characterized thrust for feed-forward altitude control.",
+      "Developed and simulated MPC for trajectory optimization (CasADi/IPOPT), achieving 20× faster computation using multiple shooting.",
+      "Demonstrated autonomous takeoff and stable hover in experimental flight tests.",
     ],
     button: [
       {
@@ -145,6 +128,29 @@ export const Projects = [
       {
         title: "Thesis Report",
         link: "https://elibrary.tucl.edu.np/JQ99OgQIizUxyjI9nB0on9OyLkqsGIf4/api/core/bitstreams/50768bc5-b571-4bc2-9ae1-6c3d998d0251/content",
+      },
+    ],
+  },
+  {
+    title: "Quadruped Robot Dog (Open Source STEM Kit)",
+    organization: "Makit Labs",
+    date: "",
+    place: "",
+    points: [
+      "Designed a low-cost (sub-$80) 12-DOF quadruped robot with custom mechanical and embedded system architecture.",
+      "Developed Python GUI tools for kinematics, calibration, stabilization, and real-time control.",
+      "Developed crawl and trot gaits validated in physics-based simulation and on real hardware.",
+      "Implemented IMU-based stabilization and calibration pipelines for robust locomotion under disturbances.",
+      "Led iterative mechanical and control design through multiple hardware revisions and open-sourced the complete platform.",
+    ],
+    button: [
+      {
+        title: "Github",
+        link: "https://github.com/Third-World-Nerd/Robot-Dog",
+      },
+      {
+        title: "Video",
+        link: "https://youtu.be/LkegFqLjT9M",
       },
     ],
   },

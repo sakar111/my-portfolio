@@ -18,7 +18,7 @@ const App: React.FC = () => {
         <Startup />
         <ExperienceSection
           id="jobExperience"
-          title="Job Experience"
+          title="Work Experience"
           data={jobExperience}
           bgColor="bg-white"
         />
@@ -30,7 +30,7 @@ const App: React.FC = () => {
         />
         <ExperienceSection
           id="projects"
-          title="Projects"
+          title="Research and Development"
           data={Projects}
           bgColor="bg-white"
         />

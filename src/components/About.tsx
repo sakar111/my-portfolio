@@ -29,9 +29,10 @@ const About: React.FC = () => {
             </h2>
           </div>
           <p className="text-left description">
-            I build robots to improve people’s lives. I prefer my robots to have
-            their own intelligence and show movement – pushing the limits of
-            physics with stability and control.
+            Passionate about building intelligent robots that merge perception,
+            motion, learning and control. Experienced in both control algorithms
+            and hardware implementation, I aim to develop autonomous systems
+            that are adaptable, robust, and ready for real-world deployment.
           </p>
         </div>
 
