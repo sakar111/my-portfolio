@@ -75,6 +75,14 @@
   animation: bounceInline 1s ease-in-out infinite;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.35s ease-out;
+}
+
 .delay-200 {
   animation-delay: 0.2s;
 }
@@ -143,4 +151,102 @@ aside::-webkit-scrollbar-thumb {
 
 aside::-webkit-scrollbar-thumb:hover {
   background: #6b7280; /* slightly lighter on hover */
+}
+
+/* ── Research hero fallback illustrations ── */
+.art-ping {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: artPing 3s ease-out infinite;
+  opacity: 0;
+}
+@keyframes artPing {
+  0% { transform: scale(0.2); opacity: 0.9; }
+  100% { transform: scale(9); opacity: 0; }
+}
+.art-dash { animation: artDash 1.6s linear infinite; }
+@keyframes artDash { to { stroke-dashoffset: -28; } }
+.art-surface { animation: artSurface 4s ease-in-out infinite alternate; }
+@keyframes artSurface { to { transform: translateX(-40px); } }
+.art-led { animation: artLed 1.2s steps(2, jump-none) infinite; }
+@keyframes artLed { 50% { opacity: 0.25; } }
+.art-bob { animation: artBob 3.2s ease-in-out infinite; }
+@keyframes artBob { 50% { transform: translateY(-8px); } }
+.art-prop {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: artProp 0.12s linear infinite alternate;
+}
+@keyframes artProp { to { transform: scaleX(0.55); } }
+.art-glow { animation: artGlow 2.4s ease-in-out infinite; }
+@keyframes artGlow { 50% { opacity: 0.6; } }
+
+.art-bubble { animation: artBubble 4.5s ease-in infinite; opacity: 0; }
+@keyframes artBubble {
+  0% { transform: translateY(0); opacity: 0; }
+  15% { opacity: 0.6; }
+  100% { transform: translateY(-180px); opacity: 0; }
+}
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  .art-ping, .art-dash, .art-surface, .art-led, .art-bob, .art-prop, .art-glow, .art-bubble,
+  .animate-bounceInline {
+    animation: none !important;
+  }
+  .art-ping { opacity: 0.4; }
+  html { scroll-behavior: auto; }
+}
+
+/* ── Footer rocket: hop between two pads (20% → 80% of the scene width) ── */
+.rk-scene { container-type: inline-size; }
+.rk-hop { animation: rkHop 14s ease-in-out infinite; transform-origin: 50% 100%; }
+@keyframes rkHop {
+  0%, 8%    { transform: translate(0, 0) rotate(0deg); }
+  20%       { transform: translate(14cqw, -150px) rotate(14deg); }
+  34%       { transform: translate(46cqw, -150px) rotate(-10deg); }
+  44%, 58%  { transform: translate(60cqw, 0) rotate(0deg); }
+  70%       { transform: translate(46cqw, -150px) rotate(-14deg); }
+  84%       { transform: translate(14cqw, -150px) rotate(10deg); }
+  94%, 100% { transform: translate(0, 0) rotate(0deg); }
+}
+.rk-flame-gate { animation: rkFlameGate 14s linear infinite; opacity: 0; }
+@keyframes rkFlameGate {
+  0%, 6%   { opacity: 0; }
+  8%, 43%  { opacity: 1; }
+  45%, 56% { opacity: 0; }
+  58%, 93% { opacity: 1; }
+  95%, 100%{ opacity: 0; }
+}
+.rk-flame { transform-origin: 50% 0; animation: rkFlicker 0.12s ease-in-out infinite alternate; }
+@keyframes rkFlicker { from { transform: scaleY(0.8) scaleX(1.05); } to { transform: scaleY(1.25) scaleX(0.9); } }
+
+.rk-puff {
+  position: absolute; left: 50%; bottom: 0;
+  width: 70px; height: 26px; margin-left: -35px;
+  border-radius: 9999px; background: #d1d5db;
+  opacity: 0; transform: scale(0.2);
+}
+.rk-puff-l { animation: rkPuffL 14s ease-out infinite; }
+.rk-puff-r { animation: rkPuffR 14s ease-out infinite; }
+@keyframes rkPuffL {
+  0%, 6%   { opacity: 0; transform: scale(0.2); }
+  8%       { opacity: 0.9; transform: scale(0.6); }
+  16%      { opacity: 0; transform: scale(1.6); }
+  91%      { opacity: 0; transform: scale(0.2); }
+  94%      { opacity: 0.9; transform: scale(0.7); }
+  100%     { opacity: 0; transform: scale(1.5); }
+}
+@keyframes rkPuffR {
+  0%, 41%  { opacity: 0; transform: scale(0.2); }
+  44%      { opacity: 0.9; transform: scale(0.7); }
+  50%      { opacity: 0; transform: scale(1.5); }
+  56%      { opacity: 0; transform: scale(0.2); }
+  58%      { opacity: 0.9; transform: scale(0.6); }
+  66%, 100%{ opacity: 0; transform: scale(1.6); }
+}
+.rk-paused * { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .rk-hop, .rk-flame-gate, .rk-flame, .rk-puff { animation: none !important; }
 }

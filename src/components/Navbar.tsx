@@ -2,7 +2,10 @@ import React, { useState, useEffect, useMemo } from "react";
 import {
   BiHome,
   BiUser,
-  BiDollar,
+  BiVideo,
+  BiChip,
+  BiBookAlt,
+  BiFile,
   BiBriefcase,
   BiBot,
   BiX,
@@ -10,7 +13,7 @@ import {
   BiEnvelope,
   BiBookContent,
 } from "react-icons/bi";
-import { FaGithub, FaLinkedinIn, FaChalkboardTeacher } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
@@ -27,16 +30,14 @@ const Navbar: React.FC = () => {
     () => [
       { name: "Home", icon: <BiHome />, link: "#home" },
       { name: "About", icon: <BiUser />, link: "#about" },
-      { name: "My Startup", icon: <BiDollar />, link: "#startup" },
-      { name: "Job Experience", icon: <BiBriefcase />, link: "#jobExperience" },
-      {
-        name: "Teaching Experience",
-        icon: <FaChalkboardTeacher />,
-        link: "#teachingExperience",
-      },
+      { name: "Current Role", icon: <BiChip />, link: "#research" },
+      { name: "Experience", icon: <BiBriefcase />, link: "#jobExperience" },
       { name: "Projects", icon: <BiBot />, link: "#projects" },
+      { name: "Education & Skills", icon: <BiBookAlt />, link: "#education" },
+      { name: "For Fun", icon: <BiVideo />, link: "#videos" },
+      { name: "Contact", icon: <BiEnvelope />, link: "#contact" },
       { name: "Essays", icon: <BiBookContent />, link: "/essays" },
-      { name: "CV", icon: <BiBookContent />, link: "/SakarPathak_CV.pdf" },
+      { name: "Resume", icon: <BiFile />, link: "/SakarPathak_CV.pdf" },
     ],
     []
   );
@@ -115,15 +116,22 @@ const Navbar: React.FC = () => {
         {/* Profile */}
         <div className="mb-4">
           <img
-            src="/photo/my-profile2.jpg"
-            alt="Profile"
-            className="w-30 h-30 rounded-full border-8 border-white/15"
+            src="/photo/avatar.jpg"
+            alt="Sakar Pathak"
+            width={120}
+            height={120}
+            className="w-30 h-30 rounded-full border-8 border-white/15 object-cover"
           />
         </div>
 
-        <h1 className="font-Raleway text-white text-2xl font-bold mb-4">
+        <h1 className="font-Raleway text-white text-2xl font-bold mb-1">
           Sakar Pathak
         </h1>
+        <p className="font-Poppins text-xs text-[#A8A9B4] mb-4 text-center px-6">
+          Robotics &amp; Hardware Engineer
+          <br />
+          M.S. EE @ University of Nevada, Reno
+        </p>
 
         {/* Social Icons */}
         <div className="flex gap-4 mb-6">
@@ -160,7 +168,7 @@ const Navbar: React.FC = () => {
                 key={item.name}
                 // *** FIX APPLIED HERE: Call the new handler ***
                 onClick={() => handleNavigation(item)}
-                className={`group flex items-center gap-2 py-5 cursor-pointer transition-colors duration-200 ${
+                className={`group flex items-center gap-2 py-3 cursor-pointer transition-colors duration-200 ${
                   active === item.name
                     ? "text-white"
                     : "text-[#A8A9B4] hover:text-white"

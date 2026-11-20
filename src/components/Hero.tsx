@@ -1,5 +1,28 @@
 import React, { useState, useRef } from "react";
 
+const HeroCTAs: React.FC<{ dark?: boolean }> = ({ dark }) => (
+  <div className={`flex flex-wrap gap-3 mt-6 ${dark ? "justify-center" : ""}`}>
+    <a
+      href="#research"
+      className="px-5 py-2.5 rounded-md bg-[#149ddd] hover:bg-[#1287bf] text-white font-Poppins text-sm transition-colors"
+    >
+      See what I'm building
+    </a>
+    <a
+      href="/SakarPathak_CV.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`px-5 py-2.5 rounded-md font-Poppins text-sm transition-colors border ${
+        dark
+          ? "border-gray-300 text-gray-800 hover:bg-gray-100"
+          : "border-white/40 text-white hover:bg-white/10"
+      }`}
+    >
+      Resume
+    </a>
+  </div>
+);
+
 const Hero: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalVideoRef = useRef<HTMLVideoElement>(null);
@@ -38,17 +61,22 @@ const Hero: React.FC = () => {
               Sakar Pathak
             </h1>
             <p className="text-[26px] font-Roboto text-white">
-              I love{" "}
+              I build{" "}
               <span className="border-b-2 border-[#149DDD] animate-bounceInline inline-block">
-                Robotics
-              </span>
-              <br />
-              and{" "}
-              <span className="border-b-2 border-[#149DDD] animate-bounceInline inline-block delay-200">
-                creating videos
+                robots
               </span>{" "}
-              about building robots.
+              end to end,
+              <br />
+              from the{" "}
+              <span className="border-b-2 border-[#149DDD] animate-bounceInline inline-block delay-200">
+                circuit board
+              </span>{" "}
+              to the control loop.
             </p>
+            <p className="font-Roboto text-white/75 mt-3">
+              M.S. EE · Graduate Research Assistant, University of Nevada, Reno
+            </p>
+            <HeroCTAs />
           </div>
         </div>
       </div>
@@ -75,22 +103,27 @@ const Hero: React.FC = () => {
 
       {/* Mobile Layout */}
       <div className="lg:hidden flex flex-col items-center px-6 py-8">
-        <div className="pt-10 mb-10 text-center">
+        <div className="pt-10 mb-10 text-center flex flex-col items-center">
           <h1 className="text-4xl sm:text-5xl font-bold font-Raleway text-black mb-4">
             Sakar Pathak
           </h1>
           <p className="text-lg sm:text-xl font-Roboto text-black">
-            I love{" "}
+            I build{" "}
             <span className="border-b-2 border-[#149DDD] animate-bounceInline inline-block">
-              Robotics
-            </span>
-            <br />
-            and{" "}
-            <span className="border-b-2 border-[#149DDD] animate-bounceInline inline-block delay-200">
-              creating videos
+              robots
             </span>{" "}
-            about building robots.
+            end to end,
+            <br />
+            from the{" "}
+            <span className="border-b-2 border-[#149DDD] animate-bounceInline inline-block delay-200">
+              circuit board
+            </span>{" "}
+            to the control loop.
           </p>
+          <p className="font-Roboto text-gray-600 text-sm mt-3">
+            M.S. EE · Graduate Research Assistant, University of Nevada, Reno
+          </p>
+          <HeroCTAs dark />
         </div>
         <video
           src="/photo/hero-bg.mp4"

@@ -63,13 +63,28 @@ export const youtubeVideos = [
 export const jobExperience = [
   {
     title: "Co-Founder & Lead Engineer",
-    organization: "Axar Space Pvt. Ltd.",
-    date: "Feb 2024 - Present",
+    organization: "Axar Space Pvt. Ltd. · Makit Labs (educational robotics)",
+    date: "Feb 2024 – Jul 2026",
     place: "Kathmandu, Nepal",
     points: [
-      "Developed complete mechanical, electrical, and firmware stack for programmable robotics platform, enabling students to build multiple projects from a single kit.",
-      "Led development of embedded hardware and software across multiple projects.",
-      "Produced technical video content demonstrating robotics concepts through hands-on projects.",
+      "Built the full mechanical, electrical, and firmware stack of a robotics kit that lets students build multiple robots.",
+      "Designed and open-sourced a sub-$80 robot dog kit.",
+      "Taught 1,000+ students through workshops and weekly STEM classes.",
+    ],
+    media: [
+      { type: "image" as const, src: "/photo/car-kit.jpg", caption: "Makit robotics kit: one kit, many robots" },
+      { type: "image" as const, src: "/photo/robot-dog2.jpg", caption: "Open-source robot dog kit" },
+      { type: "image" as const, src: "/photo/students.jpg", caption: "1,000+ students taught" },
+    ],
+    button: [{ title: "makitlabs.com", link: "https://makitlabs.com" }],
+  },
+  {
+    title: "Lecturer",
+    organization: "Kantipur College of Management and Information Technology",
+    date: "May 2024 – Sep 2025",
+    place: "Kathmandu, Nepal",
+    points: [
+      "Taught Discrete Mathematics, Digital Logic, and Data Communication & Computer Networks.",
     ],
   },
   {
@@ -78,52 +93,38 @@ export const jobExperience = [
     date: "Jan 2024 - Apr 2024",
     place: "Pokhara, Nepal",
     points: [
-      "Led development of 1000 HID devices (keyboard and mouse) using microcontrollers and ASICs.",
+      "Led hardware development and production of 1,000 HID devices (keyboards and mice) built on microcontrollers and ASICs.",
     ],
   },
   {
     title: "Robotics Engineer",
     organization: "North Star Developer’s Village",
-    date: "Aug 2024- Oct 2024",
+    date: "Aug 2023 – Oct 2023",
     place: "Kathmandu, Nepal",
     points: [
-      "Led completion of Person Following project for an Autonomous Robot, achieving 75% accuracy.",
+      "Delivered a person-following system for an autonomous mobile robot, achieving 75% tracking accuracy.",
     ],
-  },
-];
-
-export const teachingExperience = [
-  {
-    title: "Lecturer, Discrete Mathematics & Digital Logic",
-    organization: "Kantipur College of Management and Information Technology",
-    date: "May 2024- Sep 2025",
-    place: "Kathmandu, Nepal",
-    points: [],
   },
 ];
 
 export const Projects = [
   {
-    title: " Reusable, Autonomous VTOL Vehicle (Thesis)",
-    organization: "Final Year Thesis",
-    date: "",
+    title: "Reusable Autonomous VTOL Vehicle",
+    organization: "Bachelor's Thesis, Pulchowk Campus",
+    date: "2023",
     place: "",
     points: [
-      "Designed custom flight computer integrating IMU, barometer, GPS, and LiDAR for autonomous vertical flight.",
-      "Implemented asynchronous EKF for sensor fusion, reducing GPS horizontal noise by 96% and achieving sub-meter position accuracy.",
-      "Developed 250Hz attitude estimation on embedded hardware and performed system identification using MOESP to derive state-space models.",
-      "Designed and implemented LQG controller with integral action for attitude stabilization; characterized thrust for feed-forward altitude control.",
-      "Developed and simulated MPC for trajectory optimization (CasADi/IPOPT), achieving 20× faster computation using multiple shooting.",
-      "Demonstrated autonomous takeoff and stable hover in experimental flight tests.",
+      "Designed a custom flight computer (IMU, barometer, GPS, LiDAR) and demonstrated autonomous takeoff and stable hover in flight tests.",
+      "Implemented an asynchronous EKF, cutting GPS horizontal noise by 96% for sub-meter position accuracy.",
+      "Ran 250 Hz embedded attitude estimation; identified models via MOESP and designed an LQG controller with integral action.",
+      "Developed MPC trajectory optimization in CasADi/IPOPT, achieving 20× faster solve times with multiple shooting.",
     ],
+    // Loops this section of the YouTube video (seconds). Pick your best 10–15 s.
+    clip: { videoId: "sy4MgeHsBhg", start: 0, end: 15 },
     button: [
       {
         title: "Github",
         link: "https://github.com/sakar111/UAV-Model-Rocket-with-Guidance-Navigation-and-Control",
-      },
-      {
-        title: "Video",
-        link: "https://youtu.be/sy4MgeHsBhg",
       },
       {
         title: "Thesis Report",
@@ -132,7 +133,7 @@ export const Projects = [
     ],
   },
   {
-    title: "Quadruped Robot Dog (Open Source STEM Kit)",
+    title: "Open-Source 12-DOF Quadruped Robot",
     organization: "Makit Labs",
     date: "",
     place: "",
@@ -143,51 +144,52 @@ export const Projects = [
       "Implemented IMU-based stabilization and calibration pipelines for robust locomotion under disturbances.",
       "Led iterative mechanical and control design through multiple hardware revisions and open-sourced the complete platform.",
     ],
+    clip: { videoId: "LkegFqLjT9M", start: 0, end: 15 },
     button: [
       {
         title: "Github",
         link: "https://github.com/Third-World-Nerd/Robot-Dog",
       },
-      {
-        title: "Video",
-        link: "https://youtu.be/LkegFqLjT9M",
-      },
     ],
   },
 ];
 
-export const awardsScholarships = [
+export const education = [
   {
-    title: "",
-    organization: "",
-    date: "",
-    place: "",
-    points: [
-      "Ranked 24th out of 16,000 in Engineering Entrance Exam—the highest in Electronics department",
-      "Full Undergraduate Scholarship, Pulchowk Campus",
-      "Winner, National Science Exhibition",
-      "Nepal Government Financial Aid during High School",
-    ],
+    school: "University of Nevada, Reno",
+    degree: "M.S. in Electrical Engineering",
+    date: "Aug 2026 – May 2028 (expected)",
+    detail: "Graduate Research Assistant, Autonomous Systems Laboratory",
+  },
+  {
+    school: "Pulchowk Campus, Tribhuvan University",
+    degree: "B.E. in Electronics, Communication & Information Engineering",
+    date: "2018 – 2023",
+    detail: "78.04% · Rank 9 of 500+ · Full scholarship",
   },
 ];
 
-export const makitCardCopies = [
+export const honors = [
+  "Ranked 24th of 16,000 in the national engineering entrance exam (top in Electronics)",
+  "Winner, National Science Exhibition",
+  "Hardware Coordinator, LOCUS 2023: ran six robotics contests for 20,000+ visitors",
+];
+
+export const skills = [
   {
-    image: "/photo/robot-dog2.jpg",
-    quote: "Open Sourced Makit Robot Dog Kit",
-    backText:
-      "With Robot Dogs being one of the most researched topics in Robotics, we wanted to enable every tech enthusiast to be able to build one. So with months of R&D we created and open sourced the cheapest possible build for the Robot Dog inspired by the Stanford Pupper. All of the design, circuits and code can be found in our github and it will cost you at max NPR 15,000 to build on your own.",
+    group: "Electronics & PCB",
+    items: ["Analog / mixed-signal", "Low-noise front ends", "Active filters", "Multilayer PCB (Altium, KiCad)", "LTspice", "Board bring-up"],
   },
   {
-    image: "/photo/car-kit.jpg",
-    quote: "Researched and Developed Makit Robotics Kit",
-    backText:
-      "We wanted to eliminate the barrier to entry to Robotics Education so we developed a plug and play robotics kit which could be used to build multiple projects. We provided tutorials for 6 projects including a RC Car, Line follower robot, Self balancing robot and a personal AI assistance and made it compatible with a wide range of sensors, empowering users to keep innovating and build endless new projects beyond the included tutorials.",
+    group: "Embedded",
+    items: ["C/C++", "STM32", "ESP32", "Teensy", "Raspberry Pi", "NVIDIA Jetson", "FreeRTOS", "I2C / SPI / UART"],
   },
   {
-    image: "/photo/students.jpg",
-    quote: "Taught More than 1000 Students",
-    backText:
-      "We hosted 3+ workshops and weekly STEM classes and taught over 1000 students Robotics all across the country over the course of a year.",
+    group: "Drones & Controls",
+    items: ["ArduPilot", "MAVLink", "ELRS", "PID tuning", "LQR / LQG", "MPC", "EKF / UKF", "System ID"],
+  },
+  {
+    group: "Software & Tools",
+    items: ["Python", "MATLAB / Simulink", "ROS 2", "Computer vision", "SLAM", "DSP", "Fusion 360", "3D printing", "Git"],
   },
 ];

@@ -1,6 +1,11 @@
 import React from "react";
+import { MediaGallery } from "./Research";
+import type { Media } from "../assets/research";
+import YouTubeClip, { type Clip } from "./YouTubeClip";
 
 export interface CardProps {
+  clip?: Clip; // YouTube section that autoplays muted, like a GIF
+  media?: Media[]; // photos/clips shown under the bullets (missing files auto-hide on the live site)
   title: string;
   organization?: string; // make optional
   date?: string; // make optional
@@ -16,9 +21,21 @@ const Card: React.FC<CardProps> = ({
   place,
   points,
   button,
+  media,
+  clip,
 }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-5 w-full max-w-2xl border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+    <div
+      className={`bg-white shadow-md rounded-lg p-5 w-full ${
+        clip ? "md:grid md:grid-cols-5 md:gap-8 md:items-center" : ""
+      } border border-gray-100 hover:shadow-lg transition-shadow duration-300`}
+    >
+      {clip && (
+        <div className="mb-4 md:mb-0 md:order-2 md:col-span-2">
+          <YouTubeClip clip={clip} />
+        </div>
+      )}
+      <div className="md:order-1 md:col-span-3">
       <h3 className="subHeading font-bold text-lg">{title}</h3>
 
       {/* Only render organization if it exists */}
@@ -38,6 +55,12 @@ const Card: React.FC<CardProps> = ({
         ))}
       </ul>
 
+      {media && media.length > 0 && (
+        <div className="mb-4">
+          <MediaGallery items={media} />
+        </div>
+      )}
+
       {/* Buttons */}
       {button && button.length > 0 && (
         <div className="flex gap-3 mt-3 flex-wrap">
@@ -54,6 +77,7 @@ const Card: React.FC<CardProps> = ({
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 };
