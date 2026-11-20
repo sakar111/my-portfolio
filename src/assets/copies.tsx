@@ -63,17 +63,16 @@ export const youtubeVideos = [
 export const jobExperience = [
   {
     title: "Co-Founder & Lead Engineer",
-    organization: "Axar Space Pvt. Ltd. · Makit Labs (educational robotics)",
+    organization: "Makit Labs (Educational Robotics)",
     date: "Feb 2024 – Jul 2026",
     place: "Kathmandu, Nepal",
     points: [
-      "Built the full mechanical, electrical, and firmware stack of a robotics kit that lets students build multiple robots.",
-      "Designed and open-sourced a sub-$80 robot dog kit.",
-      "Taught 1,000+ students through workshops and weekly STEM classes.",
+      "Engineered the mechanical, electrical, and firmware stack of two low-cost kits that let students build multiple robots.",
+      "Partnered with 10 institutions and taught 1,000+ students through workshops and weekly STEM classes.",
     ],
     media: [
-      { type: "image" as const, src: "/photo/car-kit.jpg", caption: "Makit robotics kit: one kit, many robots" },
-      { type: "image" as const, src: "/photo/robot-dog2.jpg", caption: "Open-source robot dog kit" },
+      { type: "image" as const, src: "/photo/car-kit.jpg", caption: "Robotics kit: one kit, many robots" },
+      { type: "image" as const, src: "/photo/robot-dog2.jpg", caption: "Robot dog kit (open source)" },
       { type: "image" as const, src: "/photo/students.jpg", caption: "1,000+ students taught" },
     ],
     button: [{ title: "makitlabs.com", link: "https://makitlabs.com" }],
@@ -81,16 +80,16 @@ export const jobExperience = [
   {
     title: "Lecturer",
     organization: "Kantipur College of Management and Information Technology",
-    date: "May 2024 – Sep 2025",
+    date: "May 2024 – Jul 2026",
     place: "Kathmandu, Nepal",
     points: [
-      "Taught Discrete Mathematics, Digital Logic, and Data Communication & Computer Networks.",
+      "Taught Discrete Mathematics, Digital Logic, and Computer Networks.",
     ],
   },
   {
     title: "Electronics Engineer",
     organization: "Sandbox Software Pvt. Ltd.",
-    date: "Jan 2024 - Apr 2024",
+    date: "Jan 2024 – Apr 2024",
     place: "Pokhara, Nepal",
     points: [
       "Led hardware development and production of 1,000 HID devices (keyboards and mice) built on microcontrollers and ASICs.",
@@ -99,10 +98,10 @@ export const jobExperience = [
   {
     title: "Robotics Engineer",
     organization: "North Star Developer’s Village",
-    date: "Aug 2023 – Oct 2023",
+    date: "Aug 2023 – Sep 2023",
     place: "Kathmandu, Nepal",
     points: [
-      "Delivered a person-following system for an autonomous mobile robot, achieving 75% tracking accuracy.",
+      "Built camera-based person following for a wheeled ROS robot using deep-learning tracking and SLAM; 75% tracking accuracy.",
     ],
   },
 ];
@@ -115,10 +114,10 @@ export const Projects = [
     date: "2023",
     place: "",
     points: [
-      "Designed a custom flight computer (IMU, barometer, GPS, LiDAR) and demonstrated autonomous takeoff and stable hover in flight tests.",
-      "Implemented an asynchronous EKF, cutting GPS horizontal noise by 96% for sub-meter position accuracy.",
+      "Built a VTOL vehicle with a custom flight computer (IMU, barometer, GPS, LiDAR) and GNC software; demonstrated autonomous takeoff and landing.",
+      "Implemented sensor-fusion pose estimation with an asynchronous EKF, cutting GPS horizontal noise by 96% for sub-meter position accuracy.",
       "Ran 250 Hz embedded attitude estimation; identified models via MOESP and designed an LQG controller with integral action.",
-      "Developed MPC trajectory optimization in CasADi/IPOPT, achieving 20× faster solve times with multiple shooting.",
+      "Developed MPC trajectory tracking in CasADi/IPOPT; multiple shooting made solves 20× faster.",
     ],
     // Loops the whole YouTube video (add start/end in seconds to loop just a section).
     clip: { videoId: "sy4MgeHsBhg" },
@@ -160,38 +159,40 @@ export const education = [
   {
     school: "University of Nevada, Reno",
     degree: "M.S. in Electrical Engineering",
-    date: "Aug 2026 – May 2028 (expected)",
-    detail: "Graduate Research Assistant, Autonomous Systems Laboratory",
+    date: "Aug 2026 – May 2028 (Expected)",
+    detail: ["Graduate Research Assistant, Autonomous Systems Laboratory"],
   },
   {
-    school: "Pulchowk Campus, Tribhuvan University",
-    degree: "B.E. in Electronics, Communication & Information Engineering",
+    school: "Pulchowk Campus, Tribhuvan University (4% acceptance rate)",
+    degree: "B.E. in Electronics, Communication & Information Engineering · Full Scholarship",
     date: "2018 – 2023",
-    detail: "78.04% · Rank 9 of 500+ · Full scholarship",
+    detail: [
+      "Ranked 24th of 16,000 (top 0.2%) in the national engineering entrance exam; 1st in program.",
+      "Graduated 9th of 500+ in program.",
+    ],
   },
 ];
 
 export const honors = [
-  "Ranked 24th of 16,000 in the national engineering entrance exam (top in Electronics)",
-  "Winner, National Science Exhibition",
-  "Hardware Coordinator, LOCUS 2023: ran six robotics contests for 20,000+ visitors",
+  "Winner, National Science Exhibition (2018).",
+  "Hardware Coordinator, LOCUS 2023: ran six robotics contests for 20,000+ visitors.",
 ];
 
 export const skills = [
   {
-    group: "Electronics & PCB",
-    items: ["Analog / mixed-signal", "Low-noise front ends", "Active filters", "Multilayer PCB (Altium, KiCad)", "LTspice", "Board bring-up"],
+    group: "Hardware",
+    items: ["Analog/mixed-signal design", "Multilayer PCB (Altium, KiCad)", "LTspice", "Board bring-up"],
   },
   {
     group: "Embedded",
-    items: ["C/C++", "STM32", "ESP32", "Teensy", "Raspberry Pi", "NVIDIA Jetson", "FreeRTOS", "I2C / SPI / UART"],
+    items: ["C/C++", "STM32", "ESP32", "Teensy", "Raspberry Pi", "NVIDIA Jetson", "FreeRTOS"],
   },
   {
-    group: "Drones & Controls",
-    items: ["ArduPilot", "MAVLink", "ELRS", "PID tuning", "LQR / LQG", "MPC", "EKF / UKF", "System ID"],
+    group: "Robotics & Controls",
+    items: ["ROS 2", "ArduPilot", "MAVLink", "SLAM", "PID", "LQR/LQG", "MPC", "Kalman filtering", "System ID"],
   },
   {
     group: "Software & Tools",
-    items: ["Python", "MATLAB / Simulink", "ROS 2", "Computer vision", "SLAM", "DSP", "Fusion 360", "3D printing", "Git"],
+    items: ["Python", "MATLAB/Simulink", "Signal processing", "Computer vision", "Fusion 360", "Git"],
   },
 ];

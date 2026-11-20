@@ -13,7 +13,13 @@ const Education: React.FC = () => (
             <span className="font-Roboto text-sm text-gray-600">{e.date}</span>
           </div>
           <p className="description">{e.degree}</p>
-          {e.detail && <p className="font-Roboto text-sm text-gray-600 mt-1">{e.detail}</p>}
+          {e.detail.length > 0 && (
+            <ul className="mt-2 flex flex-col gap-1 font-Roboto text-sm text-gray-600 list-disc pl-5">
+              {e.detail.map((d) => (
+                <li key={d}>{d}</li>
+              ))}
+            </ul>
+          )}
         </div>
       ))}
     </div>

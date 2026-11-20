@@ -96,7 +96,7 @@ export const featuredProjects: FeaturedProject[] = [
       // "[Y] m range",     ← add once measured
     ],
     summary:
-      "Radio doesn't travel through water, so this modem uses sound. I designed both boards end to end, from the analog front ends and power amplifier to the PCBs and firmware.",
+      "Radio doesn't travel through water, so this modem uses sound. I designed and built both boards end to end, from the analog front ends and power amplifier to the PCBs and firmware, and I'm now developing the modulation/demodulation (e.g., BPSK) targeting 25 kbps on low-cost hardware.",
     boardViews: [
       {
         label: "Transmitter",
@@ -147,7 +147,7 @@ export const featuredProjects: FeaturedProject[] = [
       // Add once measured:  "[X] g UV payload", "±[X] cm hover"
     ],
     summary:
-      "A fleet of drones that disinfects rooms with UV-C light, in three variants: lamp on the front, top or bottom. I build the drones themselves: hardware, circuits and firmware.",
+      "A fleet of 5–10 drones designed to fly autonomously, without collisions, to disinfect rooms with UV-C light, in three lamp variants: front, top and bottom. I build the drones' hardware, circuits and firmware.",
     stackLabel: "Planned stack",
     stack: ["Mocap cameras", "Raspberry Pi", "MAVLink", "ArduPilot", "Motors"],
     gallery: [
