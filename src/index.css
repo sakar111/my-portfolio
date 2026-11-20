@@ -250,3 +250,8 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   .rk-hop, .rk-flame-gate, .rk-flame, .rk-puff { animation: none !important; }
 }
+
+/* Deep-link targets: leave room above the heading. On small screens the floating
+   menu button sits top-right, so give a bit more. */
+[id] { scroll-margin-top: 4.5rem; }
+@media (min-width: 1280px) { [id] { scroll-margin-top: 1.5rem; } }

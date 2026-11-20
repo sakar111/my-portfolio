@@ -4,6 +4,7 @@ import type { Media } from "../assets/research";
 import YouTubeClip, { type Clip } from "./YouTubeClip";
 
 export interface CardProps {
+  id?: string; // anchor for deep links, e.g. pathaksakar.com.np/#vtol
   clip?: Clip; // YouTube section that autoplays muted, like a GIF
   media?: Media[]; // photos/clips shown under the bullets (missing files auto-hide on the live site)
   title: string;
@@ -23,9 +24,11 @@ const Card: React.FC<CardProps> = ({
   button,
   media,
   clip,
+  id,
 }) => {
   return (
     <div
+      id={id}
       className={`bg-white shadow-md rounded-lg p-5 w-full ${
         clip ? "md:grid md:grid-cols-5 md:gap-8 md:items-center" : ""
       } border border-gray-100 hover:shadow-lg transition-shadow duration-300`}

@@ -109,8 +109,9 @@ export const jobExperience = [
 
 export const Projects = [
   {
+    id: "vtol",
     title: "Reusable Autonomous VTOL Vehicle",
-    organization: "Bachelor's Thesis, Pulchowk Campus",
+    organization: "Undergraduate Thesis, Pulchowk Campus",
     date: "2023",
     place: "",
     points: [
@@ -119,8 +120,8 @@ export const Projects = [
       "Ran 250 Hz embedded attitude estimation; identified models via MOESP and designed an LQG controller with integral action.",
       "Developed MPC trajectory optimization in CasADi/IPOPT, achieving 20× faster solve times with multiple shooting.",
     ],
-    // Loops this section of the YouTube video (seconds). Pick your best 10–15 s.
-    clip: { videoId: "sy4MgeHsBhg", start: 0, end: 15 },
+    // Loops the whole YouTube video (add start/end in seconds to loop just a section).
+    clip: { videoId: "sy4MgeHsBhg" },
     button: [
       {
         title: "Github",
@@ -133,6 +134,7 @@ export const Projects = [
     ],
   },
   {
+    id: "quadruped",
     title: "Open-Source 12-DOF Quadruped Robot",
     organization: "Makit Labs",
     date: "",
@@ -144,7 +146,7 @@ export const Projects = [
       "Implemented IMU-based stabilization and calibration pipelines for robust locomotion under disturbances.",
       "Led iterative mechanical and control design through multiple hardware revisions and open-sourced the complete platform.",
     ],
-    clip: { videoId: "LkegFqLjT9M", start: 0, end: 15 },
+    clip: { videoId: "LkegFqLjT9M" },
     button: [
       {
         title: "Github",

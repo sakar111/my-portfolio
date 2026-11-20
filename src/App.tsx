@@ -10,12 +10,43 @@ import { jobExperience, Projects } from "./assets/copies";
 import Footer from "./components/Footer";
 
 const App: React.FC = () => {
-  // Deep links like pathaksakar.com.np/#uw-modem (used by the CV) — the page
-  // renders after the browser's own hash jump, so scroll once mounted.
+  // Deep links like pathaksakar.com.np/#vtol (used by the resume). The browser tries to
+  // jump to the hash before React has rendered, so do it ourselves once the element
+  // exists, and again after images/fonts load (they shift the layout).
   useEffect(() => {
-    if (!window.location.hash) return;
-    const el = document.querySelector(window.location.hash);
-    if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
+    const hash = decodeURIComponent(window.location.hash.slice(1));
+    if (!hash) return;
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+    let cancelled = false;
+    const jump = () => {
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: "instant" as ScrollBehavior, block: "start" });
+      return !!el;
+    };
+    // retry each frame until the element exists (max ~3 s)
+    let frames = 0;
+    const tryJump = () => {
+      if (cancelled || jump() || ++frames > 180) return;
+      requestAnimationFrame(tryJump);
+    };
+    requestAnimationFrame(tryJump);
+
+    // re-align after the page finishes loading (late images push content down)
+    const realign = () => !cancelled && jump();
+    window.addEventListener("load", realign);
+    const t = window.setTimeout(realign, 1200);
+    // stop correcting once the visitor scrolls on their own
+    const stop = () => (cancelled = true);
+    window.addEventListener("wheel", stop, { passive: true, once: true });
+    window.addEventListener("touchstart", stop, { passive: true, once: true });
+    window.addEventListener("keydown", stop, { once: true });
+
+    return () => {
+      cancelled = true;
+      window.removeEventListener("load", realign);
+      window.clearTimeout(t);
+    };
   }, []);
 
   return (

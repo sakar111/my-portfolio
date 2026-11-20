@@ -772,7 +772,7 @@ const Research: React.FC = () => {
       </div>
 
       {featuredProjects.map((p, i) => (
-        <div key={p.id} id={p.id} className="scroll-mt-6 flex flex-col gap-5 mt-8">
+        <div key={p.id} id={p.id} className="flex flex-col gap-5 mt-8">
           {/* project header: clear start of each project */}
           <div className="flex items-center gap-4">
             <span className="font-Poppins text-4xl md:text-5xl font-bold text-[#149ddd]/25 leading-none">
