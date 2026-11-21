@@ -11,7 +11,6 @@ import {
   BiX,
   BiMenu,
   BiEnvelope,
-  BiBookContent,
 } from "react-icons/bi";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -36,7 +35,6 @@ const Navbar: React.FC = () => {
       { name: "Education & Skills", icon: <BiBookAlt />, link: "#education" },
       { name: "For Fun", icon: <BiVideo />, link: "#videos" },
       { name: "Contact", icon: <BiEnvelope />, link: "#contact" },
-      { name: "Essays", icon: <BiBookContent />, link: "/essays" },
       { name: "Resume", icon: <BiFile />, link: "/SakarPathak_CV.pdf" },
     ],
     []

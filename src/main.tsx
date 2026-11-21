@@ -4,14 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./index.css";
 import App from "./App.tsx";
-import Essays from "./Essays.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/essays" element={<Essays />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

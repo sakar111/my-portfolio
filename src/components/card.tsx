@@ -2,6 +2,7 @@ import React from "react";
 import { MediaGallery } from "./Research";
 import type { Media } from "../assets/research";
 import YouTubeClip, { type Clip } from "./YouTubeClip";
+import LinkButton from "./LinkButton";
 
 export interface CardProps {
   id?: string; // anchor for deep links, e.g. pathaksakar.com.np/#vtol
@@ -67,16 +68,8 @@ const Card: React.FC<CardProps> = ({
       {/* Buttons */}
       {button && button.length > 0 && (
         <div className="flex gap-3 mt-3 flex-wrap">
-          {button.map((btn, idx) => (
-            <a
-              key={idx}
-              href={btn.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-200 hover:bg-gray-300 description px-4 py-2 rounded-full transition-colors duration-200"
-            >
-              {btn.title}
-            </a>
+          {button.map((btn) => (
+            <LinkButton key={btn.link} title={btn.title} link={btn.link} />
           ))}
         </div>
       )}

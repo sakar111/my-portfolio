@@ -123,7 +123,7 @@ export const Projects = [
     clip: { videoId: "sy4MgeHsBhg" },
     button: [
       {
-        title: "Github",
+        title: "GitHub",
         link: "https://github.com/sakar111/UAV-Model-Rocket-with-Guidance-Navigation-and-Control",
       },
       {
@@ -148,7 +148,7 @@ export const Projects = [
     clip: { videoId: "LkegFqLjT9M" },
     button: [
       {
-        title: "Github",
+        title: "GitHub",
         link: "https://github.com/Third-World-Nerd/Robot-Dog",
       },
     ],

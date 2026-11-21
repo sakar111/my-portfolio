@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { BiBug, BiCamera, BiVideo, BiX, BiChevronDown, BiZoomIn, BiZoomOut, BiExpandAlt, BiMove } from "react-icons/bi";
-import { FiArrowRight, FiExternalLink } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 import Section from "./Section";
+import LinkButton from "./LinkButton";
 import {
   featuredProjects,
   researchLab,
@@ -727,15 +728,7 @@ const ProjectShowcase: React.FC<{ p: FeaturedProject; onOpen: (m: Media) => void
         {p.links && p.links.some((l) => l.link) && (
           <div className="flex gap-3 flex-wrap">
             {p.links.filter((l) => l.link).map((l) => (
-              <a
-                key={l.link}
-                href={l.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gray-200 hover:bg-gray-300 description px-4 py-2 rounded-full transition-colors"
-              >
-                {l.title} <FiExternalLink size={14} />
-              </a>
+              <LinkButton key={l.link} title={l.title} link={l.link} />
             ))}
           </div>
         )}

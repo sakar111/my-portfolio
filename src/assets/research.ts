@@ -148,8 +148,6 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     summary:
       "A fleet of 5–10 drones designed to fly autonomously, without collisions, to disinfect rooms with UV-C light, in three lamp variants: front, top and bottom. I build the drones' hardware, circuits and firmware.",
-    stackLabel: "Planned stack",
-    stack: ["Mocap cameras", "Raspberry Pi", "MAVLink", "ArduPilot", "Motors"],
     gallery: [
       { type: "image", src: "/projects/uv-drone/uv-front.jpg", caption: "Variant 1: UV on the front", shot: "The front-mounted UV drone" },
       { type: "image", src: "/projects/uv-drone/uv-bottom.jpg", caption: "Variant 2: UV on the bottom", shot: "The bottom-mounted UV drone" },
