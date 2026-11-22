@@ -82,11 +82,9 @@ export const featuredProjects: FeaturedProject[] = [
     // (remove.bg / Photoshop / iPhone "lift subject"), export transparent PNG,
     // ~800 px wide, < 300 KB. Boards: shot straight down. Hydrophones: side view, hanging.
     cutouts: {
-      tx: "/projects/uw-modem/cutout-tx.png",
-      rx: "/projects/uw-modem/cutout-rx.png",
-      // Hydrophones are drawn as vectors. To use photos instead, add:
-      // hydroTx: "/projects/uw-modem/cutout-hydrophone-tx.png",
-      // hydroRx: "/projects/uw-modem/cutout-hydrophone-rx.png",
+      tx: "/projects/uw-modem/cutout-tx.webp",
+      rx: "/projects/uw-modem/cutout-rx.webp",
+      // Hydrophones are drawn as vectors. To use photos instead, add hydroTx / hydroRx.
     },
     stats: [
       "2 custom boards",

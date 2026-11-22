@@ -134,7 +134,8 @@ const Cutout: React.FC<{
   src?: string;
   box: Box;
   vector: React.ReactNode;
-}> = ({ src, box, vector }) => {
+  filter?: string;
+}> = ({ src, box, vector, filter = "url(#cutShadow)" }) => {
   const ok = useImageOk(src);
   if (ok && src)
     return (
@@ -145,7 +146,7 @@ const Cutout: React.FC<{
         width={box.w}
         height={box.h}
         preserveAspectRatio="xMidYMid meet"
-        filter="url(#cutShadow)"
+        filter={filter}
       />
     );
   return <>{vector}</>;
@@ -183,11 +184,20 @@ const ModemArt: React.FC<{ cutouts?: FeaturedProject["cutouts"] }> = ({ cutouts 
   const WL = 152; // waterline y
   const txBoard = { x: 72, y: 12, w: 126, h: 126 };
   const rxBoard = { x: 442, y: 12, w: 126, h: 126 };
-  const txHydro = { x: 95, y: 182, w: 80, h: 100 };
-  const rxHydro = { x: 465, y: 182, w: 80, h: 100 };
-  const txC = txHydro.x + txHydro.w / 2;
-  const rxC = rxHydro.x + rxHydro.w / 2;
-  const pingY = 242;
+  // Real hydrophone photo (cable enters top-left, probe at ~91% across / 87% down).
+  // The RX copy is mirrored. If the photos are missing, fall back to drawn hydrophones.
+  const hydroTxOk = useImageOk(cutouts?.hydroTx);
+  const hydroRxOk = useImageOk(cutouts?.hydroRx);
+  const photoHydro = hydroTxOk === true && hydroRxOk === true;
+  const PROBE_X = 0.913;
+  const PROBE_Y = 0.866;
+  const HW = 87; // photo box width; height keeps the photo's 0.723 aspect
+  const HH = 120;
+  const txHydro = photoHydro ? { x: 84, y: 140, w: HW, h: HH } : { x: 95, y: 182, w: 80, h: 100 };
+  const rxHydro = photoHydro ? { x: 471, y: 140, w: HW, h: HH } : { x: 465, y: 182, w: 80, h: 100 };
+  const txC = photoHydro ? txHydro.x + PROBE_X * HW : txHydro.x + txHydro.w / 2;
+  const rxC = photoHydro ? rxHydro.x + (1 - PROBE_X) * HW : rxHydro.x + rxHydro.w / 2;
+  const pingY = photoHydro ? txHydro.y + PROBE_Y * HH : 242;
   const surface =
     `M-40 ${WL} Q -20 ${WL - 8} 0 ${WL} ` +
     Array.from({ length: 17 }, (_, i) => `T ${40 * (i + 1)} ${WL}`).join(" ");
@@ -212,6 +222,9 @@ const ModemArt: React.FC<{ cutouts?: FeaturedProject["cutouts"] }> = ({ cutouts 
         <clipPath id="channel">
           <rect x={txC} y={WL + 2} width={rxC - txC} height={320 - WL} />
         </clipPath>
+        <filter id="hydroGlow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="0" stdDeviation="1.6" floodColor="#7dd3fc" floodOpacity=".55" />
+        </filter>
         <filter id="cutShadow" x="-20%" y="-20%" width="140%" height="140%">
           <feDropShadow dx="0" dy="5" stdDeviation="5" floodColor="#000" floodOpacity=".6" />
         </filter>
@@ -229,9 +242,13 @@ const ModemArt: React.FC<{ cutouts?: FeaturedProject["cutouts"] }> = ({ cutouts 
       <rect x={txBoard.x - 22} y={WL - 14} width={txBoard.w + 44} height="8" rx="2" fill="#1e293b" />
       <rect x={rxBoard.x - 22} y={WL - 14} width={rxBoard.w + 44} height="8" rx="2" fill="#1e293b" />
 
-      {/* cables */}
+      {/* cables (the hydrophone photos bring their own) */}
+      {!photoHydro && (
+        <>
       <path d={`M${txBoard.x + 30} ${WL - 8} C ${txBoard.x + 30} ${WL + 14}, ${txC} ${WL + 8}, ${txC} ${txHydro.y + 4}`} stroke="#0b0f17" strokeWidth="3" fill="none" />
       <path d={`M${rxBoard.x + rxBoard.w - 30} ${WL - 8} C ${rxBoard.x + rxBoard.w - 30} ${WL + 14}, ${rxC} ${WL + 8}, ${rxC} ${rxHydro.y + 4}`} stroke="#0b0f17" strokeWidth="3" fill="none" />
+        </>
+      )}
 
       {/* acoustic pings */}
       <g clipPath="url(#channel)">
@@ -251,7 +268,7 @@ const ModemArt: React.FC<{ cutouts?: FeaturedProject["cutouts"] }> = ({ cutouts 
       </g>
       {/* data waveform */}
       <path
-        d={`M${txC + 32} ${pingY} q 10 -16 20 0 ` + Array.from({ length: 13 }, () => "t 20 0").join(" ")}
+        d={`M${txC + 24} ${pingY} q 10 -16 20 0 ` + Array.from({ length: Math.max(1, Math.floor((rxC - txC - 48) / 20) - 1) }, () => "t 20 0").join(" ")}
         stroke="#e0f2fe"
         strokeWidth="1.5"
         fill="none"
@@ -271,8 +288,8 @@ const ModemArt: React.FC<{ cutouts?: FeaturedProject["cutouts"] }> = ({ cutouts 
       ))}
 
       {/* hardware: real photos if present, vectors otherwise */}
-      <Cutout src={cutouts?.hydroTx} box={txHydro} vector={<VectorHydrophone box={txHydro} />} />
-      <Cutout src={cutouts?.hydroRx} box={rxHydro} vector={<VectorHydrophone box={rxHydro} />} />
+      <Cutout src={cutouts?.hydroTx} box={txHydro} vector={<VectorHydrophone box={txHydro} />} filter="url(#hydroGlow)" />
+      <Cutout src={cutouts?.hydroRx} box={rxHydro} vector={<VectorHydrophone box={rxHydro} />} filter="url(#hydroGlow)" />
       <Cutout src={cutouts?.tx} box={txBoard} vector={<VectorBoard box={txBoard} label="TX" />} />
       <Cutout src={cutouts?.rx} box={rxBoard} vector={<VectorBoard box={rxBoard} label="RX" />} />
 
@@ -598,9 +615,9 @@ const BoardViews: React.FC<{ views: BoardView[]; onOpen: (m: Media) => void }> =
       </div>
       {/* key forces a fresh mount so the switch fades in */}
       <div key={v.label} className="grid grid-cols-3 gap-4 max-w-3xl animate-fadeIn">
-        <Figure media={v.layout} onOpen={onOpen} fit="contain" />
-        <Figure media={v.render} onOpen={onOpen} fit="contain" />
         {v.photo && <Figure media={v.photo} onOpen={onOpen} square />}
+        <Figure media={v.render} onOpen={onOpen} fit="contain" />
+        <Figure media={v.layout} onOpen={onOpen} fit="contain" />
       </div>
     </div>
   );
