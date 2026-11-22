@@ -593,11 +593,13 @@ const BoardViews: React.FC<{ views: BoardView[]; onOpen: (m: Media) => void }> =
 }) => (
   <div className="flex flex-col gap-4">
     <h4 className="font-Raleway font-bold text-lg text-[#050d18]">Board design</h4>
-    {/* real boards first (TX, RX), then their layouts (TX, RX) */}
+    {/* per board: real board, then its layout (TX board, TX layout, RX board, RX layout) */}
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {views.map((v) => v.photo && <Figure key={v.photo.src} media={v.photo} onOpen={onOpen} square />)}
       {views.map((v) => (
-        <Figure key={v.layout.src} media={v.layout} onOpen={onOpen} fit="contain" />
+        <React.Fragment key={v.label}>
+          {v.photo && <Figure media={v.photo} onOpen={onOpen} square />}
+          <Figure media={v.layout} onOpen={onOpen} fit="contain" />
+        </React.Fragment>
       ))}
     </div>
   </div>
