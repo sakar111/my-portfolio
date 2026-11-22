@@ -67,8 +67,9 @@ export const jobExperience = [
     date: "Feb 2024 – Jul 2026",
     place: "Kathmandu, Nepal",
     points: [
-      "Engineered the mechanical, electrical, and firmware stack of two low-cost kits that let students build multiple robots.",
-      "Partnered with 10 institutions and taught 1,000+ students through workshops and weekly STEM classes.",
+      "Co-founded a bootstrapped startup and led its six-person team from concept to market: product direction, hiring, and management.",
+      "Led development of two products from scratch, a modular multi-robot kit and a quadruped robot dog for learning robotics, owning their mechanical, electrical, and firmware design.",
+      "Validated both in classrooms at 10 partner institutions, personally teaching most classes for 1,000+ students.",
     ],
     media: [
       { type: "image" as const, src: "/photo/car-kit.jpg", caption: "Robotics kit: one kit, many robots" },
