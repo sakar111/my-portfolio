@@ -590,38 +590,18 @@ const Lightbox: React.FC<{ media: Media | null; onClose: () => void }> = ({ medi
 const BoardViews: React.FC<{ views: BoardView[]; onOpen: (m: Media) => void }> = ({
   views,
   onOpen,
-}) => {
-  const [i, setI] = useState(0);
-  const v = views[i];
-  return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <h4 className="font-Raleway font-bold text-lg text-[#050d18]">Board design</h4>
-        <div role="tablist" className="inline-flex rounded-full bg-gray-100 p-1 border border-gray-200">
-          {views.map((b, idx) => (
-            <button
-              key={b.label}
-              role="tab"
-              aria-selected={idx === i}
-              onClick={() => setI(idx)}
-              className={`px-4 py-1.5 rounded-full font-Poppins text-sm transition-colors cursor-pointer ${
-                idx === i ? "bg-[#149ddd] text-white shadow" : "text-gray-600 hover:text-gray-900"
-              }`}
-            >
-              {b.label}
-            </button>
-          ))}
-        </div>
-      </div>
-      {/* key forces a fresh mount so the switch fades in */}
-      <div key={v.label} className="grid grid-cols-3 gap-4 max-w-3xl animate-fadeIn">
-        {v.photo && <Figure media={v.photo} onOpen={onOpen} square />}
-        <Figure media={v.render} onOpen={onOpen} fit="contain" />
-        <Figure media={v.layout} onOpen={onOpen} fit="contain" />
-      </div>
+}) => (
+  <div className="flex flex-col gap-4">
+    <h4 className="font-Raleway font-bold text-lg text-[#050d18]">Board design</h4>
+    {/* real boards first (TX, RX), then their layouts (TX, RX) */}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {views.map((v) => v.photo && <Figure key={v.photo.src} media={v.photo} onOpen={onOpen} square />)}
+      {views.map((v) => (
+        <Figure key={v.layout.src} media={v.layout} onOpen={onOpen} fit="contain" />
+      ))}
     </div>
-  );
-};
+  </div>
+);
 
 /* ─────────────────────────── Reusable gallery (used by project cards) ─────────────────────────── */
 

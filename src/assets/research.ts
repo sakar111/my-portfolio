@@ -27,7 +27,7 @@ export type Media = {
   wide?: boolean;
 };
 
-export type BoardView = { label: string; layout: Media; render: Media; photo?: Media };
+export type BoardView = { label: string; layout: Media; photo?: Media };
 
 export type FeaturedProject = {
   id: string; // anchor → pathaksakar.com.np/#<id> (use this in the CV links)
@@ -99,20 +99,17 @@ export const featuredProjects: FeaturedProject[] = [
       {
         label: "Transmitter",
         layout: { type: "image", src: "/projects/uw-modem/tx-altium-layout.png", caption: "TX: layout in Altium" },
-        render: { type: "image", src: "/projects/uw-modem/tx-altium-3d.png", caption: "TX: 3D render before fab" },
         photo: { type: "image", src: "/projects/uw-modem/tx-board.jpg", caption: "TX: the real board", shot: "Photo of the assembled TX board, straight down" },
       },
       {
         label: "Receiver",
         layout: { type: "image", src: "/projects/uw-modem/rx-altium-layout.png", caption: "RX: layout in Altium" },
-        render: { type: "image", src: "/projects/uw-modem/rx-altium-3d.png", caption: "RX: 3D render before fab" },
         photo: { type: "image", src: "/projects/uw-modem/rx-board.jpg", caption: "RX: the real board", shot: "Photo of the assembled RX board, straight down" },
       },
     ],
     gallery: [
       { type: "video", src: "/projects/uw-modem/tx-sweep.mp4", caption: "Transmitter sweeping 20 → 90 kHz", shot: "Short muted clip of the TX frequency sweep on the scope" },
       { type: "image", src: "/projects/uw-modem/bench.jpg", caption: "Bring-up on the bench", shot: "Bench setup: scope, supplies, boards" },
-      { type: "image", src: "/projects/uw-modem/aquarium-build.jpg", caption: "Tank test loading… building the aquarium myself", shot: "You: saw in one hand, drill in the other, goggles on" },
       { type: "image", src: "/projects/uw-modem/rx-app.png", caption: "My receiver app: a 3 mV test tone through every RX stage, with live waveform, FFT and spectrogram", wide: true },
     ],
     links: [
